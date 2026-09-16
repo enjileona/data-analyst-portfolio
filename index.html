@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +14,6 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-
 
 <body>
 
@@ -40,7 +38,6 @@
 
   <main>
 
-
     <!-- ================= HERO ================= -->
 
     <section id="home" class="hero section">
@@ -61,14 +58,23 @@
         </p>
 
         <p class="hero-text">
-          Data Analyst specializing in Data Analysis, Dashboard Development,
-          Business Intelligence, and Process Automation.
+          Data Analyst specializing in Data Analysis,
+          Dashboard Development, Business Intelligence,
+          and Process Automation.
         </p>
 
         <div class="actions">
 
           <a class="btn primary" href="#work">
             View My Work
+          </a>
+
+          <a
+            class="btn"
+            href="assets/resume.pdf"
+            target="_blank"
+          >
+            View CV
           </a>
 
           <a class="btn" href="#contact">
@@ -100,7 +106,6 @@
     </section>
 
 
-
     <!-- ================= ABOUT ================= -->
 
     <section id="about" class="section split">
@@ -121,13 +126,15 @@
       <div>
 
         <p class="lead">
-          I am a Data Analyst with experience in data management, analysis,
-          dashboard development, and reporting automation. I enjoy transforming
-          complex datasets into structured dashboards, automated reports, and
-          actionable insights that support data-driven decision-making and
-          business improvement.
+          I am a Data Analyst with experience in data management,
+          analysis, dashboard development, and reporting automation.
+          I enjoy transforming complex datasets into structured dashboards,
+          automated reports, and actionable insights that support
+          data-driven decision-making and business improvement.
         </p>
 
+
+        <!-- EDUCATION -->
 
         <div class="education">
 
@@ -145,10 +152,89 @@
 
         </div>
 
+
+        <!-- SHOW MORE BUTTON -->
+
+        <button
+          id="aboutToggle"
+          class="show-more-btn"
+          type="button"
+          aria-expanded="false"
+          aria-controls="aboutMore"
+        >
+          Show More ↓
+        </button>
+
+
+        <!-- HIDDEN EXPERIENCE -->
+
+        <div
+          id="aboutMore"
+          class="about-more"
+          hidden
+        >
+
+          <div class="experience-item">
+
+            <span class="experience-year">
+              2025 — Present
+            </span>
+
+            <h3>
+              Learning & Culture / HR Data
+            </h3>
+
+            <p>
+              Working with HR, learning, internship, and operational data
+              to support dashboard development, reporting automation,
+              data monitoring, and analytical decision-making.
+            </p>
+
+          </div>
+
+
+          <div class="experience-item">
+
+            <span class="experience-year">
+              Current Focus
+            </span>
+
+            <h3>
+              Data Analytics & Business Intelligence
+            </h3>
+
+            <p>
+              Developing skills in SQL, Python, dashboard development,
+              data visualization, business intelligence,
+              and process automation.
+            </p>
+
+          </div>
+
+
+          <div class="experience-item">
+
+            <span class="experience-year">
+              Analytical Background
+            </span>
+
+            <h3>
+              Physics
+            </h3>
+
+            <p>
+              My academic background in Physics helped build strong
+              quantitative, analytical, logical, and problem-solving skills
+              that I now apply in data analysis.
+            </p>
+
+          </div>
+
+        </div>
+
       </div>
 
     </section>
-
 
 
     <!-- ================= SKILLS ================= -->
@@ -169,7 +255,6 @@
 
         </div>
 
-
         <p class="caption">
           Tools grouped by how I use them to solve business problems.
         </p>
@@ -178,9 +263,6 @@
 
 
       <div class="skills-grid">
-
-
-        <!-- MANAGE -->
 
         <article>
 
@@ -197,8 +279,6 @@
         </article>
 
 
-        <!-- TRANSFORM -->
-
         <article>
 
           <span>02</span>
@@ -214,8 +294,6 @@
         </article>
 
 
-        <!-- VISUALIZE -->
-
         <article>
 
           <span>03</span>
@@ -230,8 +308,6 @@
 
         </article>
 
-
-        <!-- AUTOMATE -->
 
         <article>
 
@@ -250,7 +326,6 @@
       </div>
 
     </section>
-
 
 
     <!-- ================= PROJECTS ================= -->
@@ -282,7 +357,6 @@
 
           </div>
 
-
           <div class="project-body">
 
             <p class="project-label">
@@ -297,10 +371,16 @@
               Workforce productivity and financial performance analysis.
             </p>
 
+            <a
+              class="project-link"
+              href="#case-study"
+            >
+              View Case Study →
+            </a>
+
           </div>
 
         </article>
-
 
 
         <!-- PROJECT 2 -->
@@ -314,7 +394,6 @@
             <i class="wide"></i>
 
           </div>
-
 
           <div class="project-body">
 
@@ -335,17 +414,17 @@
         </article>
 
 
-
         <!-- PROJECT 3 -->
 
         <article class="project-card">
 
           <div class="project-preview flow">
 
-            Budget <b>→</b> Realization <b>→</b> Analysis
+            Budget <b>→</b>
+            Realization <b>→</b>
+            Analysis
 
           </div>
-
 
           <div class="project-body">
 
@@ -366,7 +445,6 @@
         </article>
 
 
-
         <!-- PROJECT 4 -->
 
         <article class="project-card">
@@ -380,7 +458,6 @@
 
           </div>
 
-
           <div class="project-body">
 
             <p class="project-label">
@@ -392,13 +469,13 @@
             </h3>
 
             <p>
-              Business growth, revenue, profitability, and performance analysis.
+              Business growth, revenue, profitability,
+              and performance analysis.
             </p>
 
           </div>
 
         </article>
-
 
 
         <!-- PROJECT 5 -->
@@ -407,10 +484,11 @@
 
           <div class="project-preview flow">
 
-            Data <b>→</b> Model <b>→</b> Prediction
+            Data <b>→</b>
+            Model <b>→</b>
+            Prediction
 
           </div>
-
 
           <div class="project-body">
 
@@ -423,25 +501,22 @@
             </h3>
 
             <p>
-              Machine learning model for predicting credit risk based on
-              customer financial profiles.
+              Machine learning model for predicting credit risk
+              based on customer financial profiles.
             </p>
 
           </div>
 
         </article>
 
-
       </div>
 
     </section>
 
 
-
     <!-- ================= CASE STUDY ================= -->
 
     <section id="case-study" class="section case-study">
-
 
       <div>
 
@@ -466,8 +541,8 @@
           </h3>
 
           <p>
-            Management needed a simpler way to monitor training participation
-            and budget realization.
+            Management needed a simpler way to monitor
+            training participation and budget realization.
           </p>
 
         </article>
@@ -480,7 +555,8 @@
           </h3>
 
           <p>
-            Built an integrated dashboard using Power BI and Power Query.
+            Built an integrated dashboard using Power BI
+            and Power Query.
           </p>
 
         </article>
@@ -493,16 +569,15 @@
           </h3>
 
           <p>
-            Faster reporting, clearer visibility, and better decision support.
+            Faster reporting, clearer visibility,
+            and better decision support.
           </p>
 
         </article>
 
-
       </div>
 
     </section>
-
 
 
     <!-- ================= WORKFLOW ================= -->
@@ -520,7 +595,6 @@
 
       <div class="workflow">
 
-
         <div>
 
           <span>01</span>
@@ -536,9 +610,7 @@
         </div>
 
 
-        <em>
-          →
-        </em>
+        <em>→</em>
 
 
         <div>
@@ -556,9 +628,7 @@
         </div>
 
 
-        <em>
-          →
-        </em>
+        <em>→</em>
 
 
         <div>
@@ -576,9 +646,7 @@
         </div>
 
 
-        <em>
-          →
-        </em>
+        <em>→</em>
 
 
         <div>
@@ -596,9 +664,7 @@
         </div>
 
 
-        <em>
-          →
-        </em>
+        <em>→</em>
 
 
         <div>
@@ -615,17 +681,14 @@
 
         </div>
 
-
       </div>
 
     </section>
 
 
-
     <!-- ================= CONTACT ================= -->
 
     <section id="contact" class="section contact">
-
 
       <div>
 
@@ -638,15 +701,15 @@
         </h2>
 
         <p>
-          Open to opportunities and conversations about data analytics,
-          dashboards, business intelligence, and process automation.
+          Open to opportunities and conversations about
+          data analytics, dashboards, business intelligence,
+          and process automation.
         </p>
 
       </div>
 
 
       <div class="contact-links">
-
 
         <a
           href="https://www.linkedin.com/"
@@ -670,14 +733,11 @@
           Email ↗
         </a>
 
-
       </div>
 
     </section>
 
-
   </main>
-
 
 
   <!-- ================= FOOTER ================= -->
@@ -700,4 +760,3 @@
 </body>
 
 </html>
-```
