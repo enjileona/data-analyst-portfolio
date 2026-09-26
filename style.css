@@ -233,34 +233,17 @@ nav a:hover{
 }
 
 .portrait-shell{
-  width:min(360px,82%);
+  position:relative;
 
+  width:min(360px,82%);
   aspect-ratio:4/5;
 
   border-radius:180px 180px 24px 24px;
 
   background:var(--soft);
-
-  padding:16px;
-
   border:1px solid var(--line);
-}
 
-.portrait-placeholder{
-  height:100%;
-
-  border-radius:160px 160px 16px 16px;
-
-  border:1px dashed #aab4c2;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:var(--muted);
-
-  font-size:13px;
-  letter-spacing:.12em;
+  overflow:hidden;
 }
 
 .profile-photo{
@@ -268,8 +251,7 @@ nav a:hover{
   height:100%;
 
   object-fit:cover;
-
-  border-radius:160px 160px 16px 16px;
+  object-position:center;
 
   display:block;
 }
