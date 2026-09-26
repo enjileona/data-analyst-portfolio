@@ -23,19 +23,14 @@ html{
 
 body{
   margin:0;
-
   font-family:Arial, Helvetica, sans-serif;
-
   color:var(--ink);
-
   background:var(--white);
-
   line-height:1.6;
 }
 
 a{
   color:inherit;
-
   text-decoration:none;
 }
 
@@ -53,23 +48,17 @@ select{
 
 .site-header{
   position:sticky;
-
   top:0;
-
   z-index:50;
 
   display:flex;
-
   align-items:center;
-
   justify-content:space-between;
-
   gap:24px;
 
   padding:18px 6vw;
 
   background:rgba(255,255,255,.94);
-
   backdrop-filter:blur(12px);
 
   border-bottom:1px solid var(--line);
@@ -80,22 +69,17 @@ select{
   color:var(--navy);
 
   font-size:14px;
-
   font-weight:900;
 
   line-height:.9;
-
   letter-spacing:.14em;
 }
 
 
 nav{
   display:flex;
-
   align-items:center;
-
   gap:22px;
-
   flex-wrap:wrap;
 }
 
@@ -106,7 +90,6 @@ nav a{
   color:var(--navy);
 
   font-size:12px;
-
   font-weight:700;
 
   letter-spacing:.1em;
@@ -121,11 +104,9 @@ nav a::after{
   position:absolute;
 
   left:0;
-
   bottom:-5px;
 
   width:0;
-
   height:2px;
 
   background:var(--red);
@@ -163,11 +144,9 @@ nav a:hover::after{
   color:var(--muted);
 
   font-size:12px;
-
   font-weight:600;
 
   letter-spacing:.16em;
-
   text-transform:uppercase;
 }
 
@@ -182,7 +161,6 @@ nav a:hover::after{
   font-weight:900;
 
   line-height:.95;
-
   letter-spacing:-.04em;
 }
 
@@ -219,12 +197,13 @@ nav a:hover::after{
 
 .hero-copy{
   position:relative;
-
   z-index:2;
 }
 
 
-/* MAIN TITLE */
+/* =========================================================
+   HERO TITLE
+========================================================= */
 
 .hero h1{
   max-width:760px;
@@ -243,15 +222,13 @@ nav a:hover::after{
 }
 
 
-/* ASTERISK */
-
 .hero h1 span{
   color:var(--red);
 }
 
 
 /* =========================================================
-   SIGNATURE / NAME
+   SIGNATURE
 ========================================================= */
 
 .signature{
@@ -273,15 +250,12 @@ nav a:hover::after{
 }
 
 
-/* SMALL ACCENT LINE */
-
 .signature::after{
   content:"";
 
   display:block;
 
   width:52px;
-
   height:3px;
 
   margin-top:13px;
@@ -332,7 +306,6 @@ nav a:hover::after{
   display:inline-flex;
 
   align-items:center;
-
   justify-content:center;
 
   padding:11px 18px;
@@ -384,7 +357,7 @@ nav a:hover::after{
 
 
 /* =========================================================
-   HERO PHOTO
+   HERO VISUAL
 ========================================================= */
 
 .hero-visual{
@@ -400,46 +373,39 @@ nav a:hover::after{
 }
 
 
-/*
-   CURRENT FRAME
-   Compatible with:
-   <div class="portrait-shell">
-      <img class="profile-photo">
-   </div>
-*/
+/* =========================================================
+   PHOTO FRAME
+========================================================= */
 
 .portrait-shell{
   position:relative;
 
-  width:280px;
+  width:270px;
+  height:330px;
 
-  height:350px;
-
-  border:1px solid var(--line);
-
-  border-radius:150px 150px 22px 22px;
+  border-radius:145px 145px 22px 22px;
 
   background:var(--soft);
 
+  border:1px solid var(--line);
+
   overflow:visible;
+
+  z-index:1;
 }
 
 
-/*
+/* =========================================================
    PROFILE PHOTO
-
-   Best result if FotoProfile is a PNG
-   with transparent background.
-*/
+========================================================= */
 
 .profile-photo{
   position:absolute;
 
   left:50%;
+  bottom:-2px;
 
-  bottom:0;
-
-  width:340px;
+  width:345px;
 
   max-width:none;
 
@@ -453,20 +419,19 @@ nav a:hover::after{
 
   z-index:2;
 
-  /*
-     Creates a subtle white outline
-     around a transparent PNG.
-  */
-
   filter:
-    drop-shadow(3px 0 0 #fff)
-    drop-shadow(-3px 0 0 #fff)
-    drop-shadow(0 3px 0 #fff)
-    drop-shadow(0 -3px 0 #fff);
+    drop-shadow(4px 0 0 #ffffff)
+    drop-shadow(-4px 0 0 #ffffff)
+    drop-shadow(0 4px 0 #ffffff)
+    drop-shadow(0 -4px 0 #ffffff);
 
-  transition:transform .3s ease;
+  transition:
+    transform .3s ease,
+    filter .3s ease;
 }
 
+
+/* subtle hover effect */
 
 .hero-visual:hover .profile-photo{
   transform:
@@ -475,13 +440,14 @@ nav a:hover::after{
 }
 
 
-/* DECORATIVE DATA IMPACT */
+/* =========================================================
+   DECORATIVE DATA IMPACT
+========================================================= */
 
 .scribble{
   position:absolute;
 
   right:2%;
-
   top:12%;
 
   z-index:3;
@@ -1136,7 +1102,19 @@ footer{
 
 
   .hero-visual{
-    min-height:380px;
+    min-height:390px;
+  }
+
+
+  .portrait-shell{
+    width:250px;
+
+    height:310px;
+  }
+
+
+  .profile-photo{
+    width:320px;
   }
 
 
@@ -1208,6 +1186,8 @@ footer{
     min-height:auto;
 
     padding-top:55px;
+
+    gap:28px;
   }
 
 
@@ -1245,21 +1225,23 @@ footer{
 
 
   .hero-visual{
-    min-height:340px;
+    min-height:330px;
 
     margin-top:10px;
   }
 
 
   .portrait-shell{
-    width:230px;
+    width:215px;
 
-    height:290px;
+    height:270px;
   }
 
 
   .profile-photo{
-    width:290px;
+    width:275px;
+
+    bottom:-2px;
   }
 
 
