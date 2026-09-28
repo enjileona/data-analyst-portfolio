@@ -652,33 +652,42 @@ nav a:hover::after{
    WHAT I WORK WITH
 ========================================================= */
 
+.skills-section{
+  padding-top:76px;
+
+  padding-bottom:76px;
+}
+
+
 .skills-grid{
   display:grid;
 
   grid-template-columns:repeat(4,1fr);
 
-  gap:18px;
+  gap:16px;
 
-  margin-top:40px;
+  margin-top:32px;
 }
 
 
-/* CARD */
+/* =========================================================
+   SKILL CARD
+========================================================= */
 
 .skill-card{
   position:relative;
 
-  min-height:340px;
+  min-height:285px;
 
   display:flex;
 
   flex-direction:column;
 
-  padding:20px;
+  padding:18px 20px 20px;
 
   border:1px solid var(--line);
 
-  border-radius:22px;
+  border-radius:20px;
 
   background:var(--white);
 
@@ -692,23 +701,19 @@ nav a:hover::after{
 
 
 .skill-card:hover{
-  transform:translateY(-6px);
+  transform:translateY(-5px);
 
   border-color:#aab5c3;
 
   box-shadow:
-    0 16px 36px
-    rgba(17,41,79,.08);
+    0 14px 30px
+    rgba(17,41,79,.07);
 }
 
 
 /* NUMBER */
 
 .skill-number{
-  position:relative;
-
-  z-index:2;
-
   display:block;
 
   color:var(--muted);
@@ -717,20 +722,18 @@ nav a:hover::after{
 
   font-weight:700;
 
-  letter-spacing:.1em;
+  letter-spacing:.09em;
 }
 
 
 /* =========================================================
-   IMAGE AREA
+   IMAGE
 ========================================================= */
 
 .skill-visual{
   width:100%;
 
-  height:170px;
-
-  margin-top:10px;
+  height:120px;
 
   display:flex;
 
@@ -738,57 +741,49 @@ nav a:hover::after{
 
   justify-content:center;
 
-  padding:5px;
+  margin:8px 0 8px;
 
   overflow:hidden;
 }
 
 
-/* IMAGE */
-
 .skill-visual img{
-  width:100%;
+  width:auto;
 
-  height:100%;
+  height:auto;
 
-  max-width:220px;
+  max-width:125px;
+
+  max-height:105px;
 
   object-fit:contain;
 
-  object-position:center;
-
   display:block;
 
-  transition:
-    transform .3s ease;
+  transition:transform .25s ease;
 }
 
 
-/* slightly enlarge on hover */
-
-.skill-card:hover
-.skill-visual img{
-  transform:scale(1.04);
+.skill-card:hover .skill-visual img{
+  transform:scale(1.035);
 }
 
 
 /* =========================================================
-   SKILL TEXT
+   SKILL CONTENT
 ========================================================= */
 
 .skill-content{
   margin-top:auto;
-
-  padding-top:12px;
 }
 
 
 .skill-content h3{
-  margin:0 0 8px;
+  margin:0 0 7px;
 
   color:var(--navy);
 
-  font-size:21px;
+  font-size:20px;
 
   line-height:1.25;
 }
@@ -801,7 +796,7 @@ nav a:hover::after{
 
   font-size:13px;
 
-  line-height:1.65;
+  line-height:1.55;
 }
 
 
@@ -1134,7 +1129,7 @@ footer{
 
 
 /* =========================================================
-   SMALL DESKTOP / TABLET LANDSCAPE
+   SMALL DESKTOP
 ========================================================= */
 
 @media(max-width:1100px){
@@ -1144,11 +1139,11 @@ footer{
   }
 
   .skill-card{
-    min-height:330px;
+    min-height:270px;
   }
 
   .skill-visual{
-    height:180px;
+    height:110px;
   }
 
 
@@ -1329,15 +1324,17 @@ footer{
   }
 
   .skill-card{
-    min-height:310px;
+    min-height:250px;
   }
 
   .skill-visual{
-    height:165px;
+    height:100px;
   }
 
   .skill-visual img{
-    max-width:210px;
+    max-width:115px;
+
+    max-height:90px;
   }
 
 
@@ -1365,8 +1362,6 @@ footer{
     font-size:21px;
   }
 
-
-  /* CONTACT */
 
   .contact-card{
     grid-template-columns:
