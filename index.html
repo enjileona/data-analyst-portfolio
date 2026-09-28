@@ -9,27 +9,31 @@
 
   <meta
     name="description"
-    content="Data Analyst specializing in data analysis, dashboard development, business intelligence, and process automation."
+    content="Data Analyst specializing in data management, dashboard development, business intelligence, and process automation."
   />
 
-  <link rel="stylesheet" href="style.css" />
+  <!-- version number membantu menghindari cache lama -->
+  <link rel="stylesheet" href="style.css?v=20" />
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
   <header class="site-header">
 
     <a class="brand" href="#home">
-      EUANGGAY<br>ENJI
+      EUANGGAY<br>
+      ENJI
     </a>
 
     <nav>
       <a href="#about">ABOUT</a>
-      <a href="#work">MY WORK</a>
-      <a href="#case-study">CASE STUDY</a>
       <a href="#skills">SKILLS</a>
+      <a href="#work">MY WORK</a>
+      <a href="#workflow">WORKFLOW</a>
       <a href="#contact">CONTACT</a>
     </nav>
 
@@ -38,11 +42,13 @@
 
   <main>
 
-    <!-- ================= HERO ================= -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
     <section id="home" class="hero section">
 
-      <!-- HERO CONTENT -->
+      <!-- LEFT CONTENT -->
 
       <div class="hero-copy">
 
@@ -56,10 +62,14 @@
         </p>
 
         <p class="hero-text">
-          Data Analyst specializing in Data Management,
-          Dashboard Development, Business Intelligence,
-          and Process Automation.
+          Data Analyst specializing in
+          <strong>Data Management</strong>,
+          <strong>Dashboard Development</strong>,
+          <strong>Business Intelligence</strong>,
+          and
+          <strong>Process Automation</strong>.
         </p>
+
 
         <div class="actions">
 
@@ -70,14 +80,17 @@
             View My Work
           </a>
 
+
+          <!-- CV -->
           <a
             class="btn"
-            href="assets/documents/CV-Euanggay-Leona-Enji.pdf"
+            href="assets/documents/CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
             View CV
           </a>
+
 
           <a
             class="btn"
@@ -91,7 +104,7 @@
       </div>
 
 
-      <!-- HERO PHOTO -->
+      <!-- RIGHT VISUAL -->
 
       <div class="hero-visual">
 
@@ -115,12 +128,12 @@
     </section>
 
 
-    <!-- ================= ABOUT ================= -->
 
-    <section
-      id="about"
-      class="section split"
-    >
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section id="about" class="section split">
 
       <div>
 
@@ -135,14 +148,14 @@
       </div>
 
 
-      <div>
+      <div class="about-content">
 
         <p class="lead">
           I am a Data Analyst with experience in data management,
-          analysis, dashboard development, and reporting automation.
-          I enjoy transforming complex datasets into structured dashboards,
-          automated reports, and actionable insights that support
-          data-driven decision-making and business improvement.
+          dashboard development, reporting automation, data visualization,
+          and analytical reporting. I enjoy transforming operational data
+          into structured insights that support better business and
+          management decisions.
         </p>
 
 
@@ -165,7 +178,7 @@
         </div>
 
 
-        <!-- SHOW MORE BUTTON -->
+        <!-- EXPERIENCE BUTTON -->
 
         <button
           id="aboutToggle"
@@ -174,11 +187,11 @@
           aria-expanded="false"
           aria-controls="aboutMore"
         >
-          Show More ↓
+          View Experience ↓
         </button>
 
 
-        <!-- HIDDEN EXPERIENCE -->
+        <!-- EXPERIENCE -->
 
         <div
           id="aboutMore"
@@ -186,61 +199,62 @@
           hidden
         >
 
-          <div class="experience-item">
+          <article class="experience-card">
 
-            <span class="experience-year">
-              2025 — Present
-            </span>
+            <div class="experience-top">
 
-            <h3>
-              Learning & Culture / HR Data
-            </h3>
+              <div>
 
-            <p>
-              Working with HR, learning, internship, and operational data
-              to support dashboard development, reporting automation,
-              data monitoring, and analytical decision-making.
-            </p>
+                <span class="experience-company">
+                  PT JAMKRINDO
+                </span>
 
-          </div>
+                <h3>
+                  Data Analysis · Human Resource Management Division
+                </h3>
+
+              </div>
 
 
-          <div class="experience-item">
+              <span class="experience-period">
+                May 2025 — Present
+              </span>
 
-            <span class="experience-year">
-              Current Focus
-            </span>
-
-            <h3>
-              Data Analytics & Business Intelligence
-            </h3>
-
-            <p>
-              Developing skills in SQL, Python, dashboard development,
-              data visualization, business intelligence,
-              and process automation.
-            </p>
-
-          </div>
+            </div>
 
 
-          <div class="experience-item">
+            <ul class="experience-list">
 
-            <span class="experience-year">
-              Analytical Background
-            </span>
+              <li>
+                Developed automated dashboards and reports using
+                <strong>Looker Studio, Google Sheets, and Apps Script</strong>
+                for intern attendance monitoring and monthly reporting,
+                achieving approximately
+                <strong>90% process automation</strong>.
+              </li>
 
-            <h3>
-              Physics
-            </h3>
 
-            <p>
-              My academic background in Physics helped build strong
-              quantitative, analytical, logical, and problem-solving skills
-              that I now apply in data analysis.
-            </p>
+              <li>
+                Collaborated with the team to develop a
+                <strong>real-time budget monitoring database and dashboard</strong>
+                using Google Sheets and Google Apps Script,
+                automating approximately
+                <strong>90% of data processing and calculation workflows</strong>.
+              </li>
 
-          </div>
+
+              <li>
+                Designed and developed an
+                <strong>employee productivity dashboard</strong>
+                using Excel and Tableau, covering
+                <strong>1,000+ employees</strong>
+                to monitor and analyze workforce productivity and
+                performance metrics, supporting data-driven management decisions.
+              </li>
+
+            </ul>
+
+          </article>
 
         </div>
 
@@ -249,12 +263,12 @@
     </section>
 
 
-    <!-- ================= SKILLS ================= -->
 
-    <section
-      id="skills"
-      class="section"
-    >
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+
+    <section id="skills" class="section">
 
       <div class="section-heading">
 
@@ -270,8 +284,10 @@
 
         </div>
 
+
         <p class="caption">
-          Tools grouped by how I use them to solve business problems.
+          Tools I use to manage, analyze, visualize,
+          and communicate data.
         </p>
 
       </div>
@@ -279,84 +295,122 @@
 
       <div class="skills-grid">
 
-        <!-- MANAGE -->
 
-        <article>
+        <!-- EXCEL -->
 
-          <span>01</span>
+        <article class="skill-card">
+
+          <span class="skill-number">
+            01
+          </span>
+
+          <img
+            src="assets/images/tools/excel.png"
+            alt="Microsoft Excel"
+            class="skill-logo"
+          >
 
           <h3>
-            Manage
+            Microsoft Excel
           </h3>
 
           <p>
-            Excel · Google Sheets · SQL · Basic Python
+            Data cleaning, formulas, pivot tables,
+            analysis, reporting, and dashboard development.
           </p>
 
         </article>
 
 
-        <!-- TRANSFORM -->
+        <!-- MYSQL -->
 
-        <article>
+        <article class="skill-card">
 
-          <span>02</span>
+          <span class="skill-number">
+            02
+          </span>
+
+          <img
+            src="assets/images/tools/mysql.png"
+            alt="MySQL"
+            class="skill-logo"
+          >
 
           <h3>
-            Transform
+            MySQL
           </h3>
 
           <p>
-            Data Cleaning · Power Query · Excel Functions · Pandas
+            Querying, filtering, aggregating,
+            and preparing structured data for analysis.
           </p>
 
         </article>
 
 
-        <!-- VISUALIZE -->
+        <!-- PYTHON -->
 
-        <article>
+        <article class="skill-card">
 
-          <span>03</span>
+          <span class="skill-number">
+            03
+          </span>
+
+          <img
+            src="assets/images/tools/phyton.png"
+            alt="Python"
+            class="skill-logo"
+          >
 
           <h3>
-            Visualize
+            Python
           </h3>
 
           <p>
-            Looker Studio · Tableau · Power BI
+            Basic data analysis, data preparation,
+            exploration, and simple machine learning.
           </p>
 
         </article>
 
 
-        <!-- AUTOMATE -->
+        <!-- TABLEAU -->
 
-        <article>
+        <article class="skill-card">
 
-          <span>04</span>
+          <span class="skill-number">
+            04
+          </span>
+
+          <img
+            src="assets/images/tools/tableau.png"
+            alt="Tableau"
+            class="skill-logo"
+          >
 
           <h3>
-            Automate
+            Tableau
           </h3>
 
           <p>
-            Apps Script · VBA · Power Automate · Automated Reporting
+            Interactive visualization,
+            performance monitoring, and analytical dashboards.
           </p>
 
         </article>
+
 
       </div>
 
     </section>
 
 
-    <!-- ================= PROJECTS ================= -->
 
-    <section
-      id="work"
-      class="section"
-    >
+    <!-- =====================================================
+         PROJECTS
+    ====================================================== -->
+
+    <section id="work" class="section">
 
       <p class="section-index">
         03 / SELECTED WORK
@@ -372,14 +426,19 @@
 
         <!-- PROJECT 1 -->
 
-        <article class="project-card">
+        <a
+          class="project-card"
+          href="PASTE_LINK_PROJECT_1_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-          <div class="project-preview bars">
+          <div class="project-preview image-preview">
 
-            <i style="height:35%"></i>
-            <i style="height:58%"></i>
-            <i style="height:48%"></i>
-            <i style="height:82%"></i>
+            <img
+              src="assets/images/projects/human_productivity.png"
+              alt="Human Capital Productivity Dashboard"
+            >
 
           </div>
 
@@ -387,7 +446,7 @@
           <div class="project-body">
 
             <p class="project-label">
-              POWER BI · PEOPLE ANALYTICS
+              EXCEL · TABLEAU · PEOPLE ANALYTICS
             </p>
 
             <h3>
@@ -395,30 +454,36 @@
             </h3>
 
             <p>
-              Workforce productivity and financial performance analysis.
+              Workforce productivity and performance monitoring
+              across more than 1,000 employees to support
+              data-driven management decisions.
             </p>
 
-            <a
-              class="project-link"
-              href="#case-study"
-            >
-              View Case Study →
-            </a>
+            <span class="project-link">
+              View Project ↗
+            </span>
 
           </div>
 
-        </article>
+        </a>
+
 
 
         <!-- PROJECT 2 -->
 
-        <article class="project-card">
+        <a
+          class="project-card"
+          href="PASTE_LINK_PROJECT_2_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-          <div class="project-preview tiles">
+          <div class="project-preview image-preview">
 
-            <i></i>
-            <i></i>
-            <i class="wide"></i>
+            <img
+              src="assets/images/projects/training_analytic.png"
+              alt="Training Analytics Dashboard"
+            >
 
           </div>
 
@@ -426,7 +491,7 @@
           <div class="project-body">
 
             <p class="project-label">
-              POWER BI · LEARNING ANALYTICS
+              LOOKER STUDIO · LEARNING ANALYTICS
             </p>
 
             <h3>
@@ -434,27 +499,35 @@
             </h3>
 
             <p>
-              Training participation, cost, and learning performance analysis.
+              Learning analytics visualization covering training activity,
+              participation, duration, and learning trends.
             </p>
+
+            <span class="project-link">
+              View Project ↗
+            </span>
 
           </div>
 
-        </article>
+        </a>
+
 
 
         <!-- PROJECT 3 -->
 
-        <article class="project-card">
+        <a
+          class="project-card"
+          href="PASTE_LINK_PROJECT_3_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-          <div class="project-preview flow">
+          <div class="project-preview image-preview">
 
-            Budget
-            <b>→</b>
-
-            Realization
-            <b>→</b>
-
-            Analysis
+            <img
+              src="assets/images/projects/budget_monitoring.png"
+              alt="Budget Monitoring Dashboard"
+            >
 
           </div>
 
@@ -462,32 +535,43 @@
           <div class="project-body">
 
             <p class="project-label">
-              EXCEL · POWER QUERY · DASHBOARD
+              GOOGLE SHEETS · APPS SCRIPT · AUTOMATION
             </p>
 
             <h3>
-              Training Budget Monitoring Dashboard
+              Budget Monitoring Dashboard
             </h3>
 
             <p>
-              Budget allocation, realization, and spending analysis.
+              Real-time budget monitoring solution for tracking
+              allocation, authorization, realization, and spending.
             </p>
+
+            <span class="project-link">
+              View Project ↗
+            </span>
 
           </div>
 
-        </article>
+        </a>
+
 
 
         <!-- PROJECT 4 -->
 
-        <article class="project-card">
+        <a
+          class="project-card"
+          href="PASTE_LINK_PROJECT_4_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-          <div class="project-preview bars">
+          <div class="project-preview image-preview">
 
-            <i style="height:42%"></i>
-            <i style="height:65%"></i>
-            <i style="height:52%"></i>
-            <i style="height:88%"></i>
+            <img
+              src="assets/images/projects/business_analytic.png"
+              alt="Business Performance Analytics"
+            >
 
           </div>
 
@@ -499,32 +583,40 @@
             </p>
 
             <h3>
-              Business Performance Dashboard
+              Business Performance Analytics
             </h3>
 
             <p>
-              Business growth, revenue, profitability,
-              and performance analysis.
+              Conceptual business analytics project focused on
+              performance trends, growth, opportunity identification,
+              and decision support.
             </p>
+
+            <span class="project-link">
+              View Project ↗
+            </span>
 
           </div>
 
-        </article>
+        </a>
+
 
 
         <!-- PROJECT 5 -->
 
-        <article class="project-card">
+        <a
+          class="project-card"
+          href="PASTE_LINK_PROJECT_5_HERE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-          <div class="project-preview flow">
+          <div class="project-preview image-preview">
 
-            Data
-            <b>→</b>
-
-            Model
-            <b>→</b>
-
-            Prediction
+            <img
+              src="assets/images/projects/cedit_risk.png"
+              alt="Credit Risk Prediction"
+            >
 
           </div>
 
@@ -536,104 +628,40 @@
             </p>
 
             <h3>
-              German Credit Risk Prediction
+              Credit Risk Prediction
             </h3>
 
             <p>
-              Machine learning model for predicting credit risk
-              based on customer financial profiles.
+              Simple machine learning model developed to classify
+              customer credit risk based on financial and profile attributes.
             </p>
+
+            <span class="project-link">
+              View Project ↗
+            </span>
 
           </div>
 
-        </article>
+        </a>
+
 
       </div>
 
     </section>
 
 
-    <!-- ================= CASE STUDY ================= -->
+
+    <!-- =====================================================
+         WORKFLOW
+    ====================================================== -->
 
     <section
-      id="case-study"
-      class="section case-study"
+      id="workflow"
+      class="section"
     >
 
-      <div>
-
-        <p class="section-index">
-          04 / CASE STUDY
-        </p>
-
-        <h2>
-          LEARNING ANALYTICS DASHBOARD
-        </h2>
-
-      </div>
-
-
-      <div class="case-grid">
-
-
-        <!-- PROBLEM -->
-
-        <article>
-
-          <h3>
-            Problem
-          </h3>
-
-          <p>
-            Management needed a simpler way to monitor
-            training participation and budget realization.
-          </p>
-
-        </article>
-
-
-        <!-- SOLUTION -->
-
-        <article>
-
-          <h3>
-            Solution
-          </h3>
-
-          <p>
-            Built an integrated dashboard using Power BI
-            and Power Query.
-          </p>
-
-        </article>
-
-
-        <!-- IMPACT -->
-
-        <article>
-
-          <h3>
-            Impact
-          </h3>
-
-          <p>
-            Faster reporting, clearer visibility,
-            and better decision support.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= WORKFLOW ================= -->
-
-    <section class="section">
-
       <p class="section-index">
-        05 / WORKFLOW
+        04 / WORKFLOW
       </p>
 
       <h2>
@@ -645,16 +673,14 @@
 
         <div>
 
-          <span>
-            01
-          </span>
+          <span>01</span>
 
           <b>
             Ask
           </b>
 
           <small>
-            Business question
+            Define the business question
           </small>
 
         </div>
@@ -667,16 +693,14 @@
 
         <div>
 
-          <span>
-            02
-          </span>
+          <span>02</span>
 
           <b>
-            Clean
+            Prepare
           </b>
 
           <small>
-            Prepare data
+            Collect and clean data
           </small>
 
         </div>
@@ -689,16 +713,14 @@
 
         <div>
 
-          <span>
-            03
-          </span>
+          <span>03</span>
 
           <b>
             Analyze
           </b>
 
           <small>
-            Find patterns
+            Identify patterns and insights
           </small>
 
         </div>
@@ -711,16 +733,14 @@
 
         <div>
 
-          <span>
-            04
-          </span>
+          <span>04</span>
 
           <b>
             Visualize
           </b>
 
           <small>
-            Communicate
+            Communicate findings
           </small>
 
         </div>
@@ -733,16 +753,14 @@
 
         <div>
 
-          <span>
-            05
-          </span>
+          <span>05</span>
 
           <b>
             Recommend
           </b>
 
           <small>
-            Drive action
+            Support business action
           </small>
 
         </div>
@@ -752,7 +770,10 @@
     </section>
 
 
-    <!-- ================= CONTACT ================= -->
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
 
     <section
       id="contact"
@@ -762,45 +783,123 @@
       <div>
 
         <p class="section-index">
-          06 / CONTACT
+          05 / CONTACT
         </p>
 
         <h2>
-          LET'S TURN DATA INTO SOMETHING USEFUL.
+          LET'S CONNECT.
         </h2>
 
-        <p>
+        <p class="contact-description">
           Open to opportunities and conversations about
-          data analytics, dashboards, business intelligence,
-          and process automation.
+          Data Analytics, Business Intelligence,
+          Dashboard Development, and Process Automation.
         </p>
 
       </div>
 
 
-      <div class="contact-links">
+      <div class="contact-cards">
+
+
+        <!-- LINKEDIN -->
 
         <a
-          href="https://www.linkedin.com/"
+          class="contact-card"
+          href="PASTE_LINKEDIN_LINK_HERE"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
-          LinkedIn ↗
+
+          <img
+            src="assets/images/contact/linkedln.png"
+            alt="LinkedIn"
+          >
+
+          <div>
+
+            <span>
+              LinkedIn
+            </span>
+
+            <strong>
+              Euanggay Leona Enji
+            </strong>
+
+          </div>
+
+          <b>
+            ↗
+          </b>
+
         </a>
 
 
+
+        <!-- GITHUB -->
+
         <a
+          class="contact-card"
           href="https://github.com/enjileona"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
         >
-          GitHub ↗
+
+          <img
+            src="assets/images/contact/github.png"
+            alt="GitHub"
+          >
+
+          <div>
+
+            <span>
+              GitHub
+            </span>
+
+            <strong>
+              @enjileona
+            </strong>
+
+          </div>
+
+          <b>
+            ↗
+          </b>
+
         </a>
 
 
-        <a href="mailto:your.email@example.com">
-          Email ↗
+
+        <!-- EMAIL -->
+
+        <a
+          class="contact-card"
+          href="mailto:YOUR_EMAIL_HERE"
+        >
+
+          <img
+            src="assets/images/contact/gmail.png"
+            alt="Email"
+          >
+
+          <div>
+
+            <span>
+              Email
+            </span>
+
+            <strong>
+              YOUR_EMAIL_HERE
+            </strong>
+
+          </div>
+
+          <b>
+            ↗
+          </b>
+
         </a>
+
 
       </div>
 
@@ -809,7 +908,10 @@
   </main>
 
 
-  <!-- ================= FOOTER ================= -->
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
 
   <footer>
 
@@ -824,7 +926,7 @@
   </footer>
 
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20"></script>
 
 </body>
 
