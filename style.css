@@ -442,9 +442,6 @@ nav a:hover::after{
     translateY(-4px);
 }
 
-
-/* DIGESER KE KANAN */
-
 .scribble{
   position:absolute;
 
@@ -652,7 +649,7 @@ nav a:hover::after{
 
 
 /* =========================================================
-   SKILLS - FLOW STYLE
+   WHAT I WORK WITH
 ========================================================= */
 
 .skills-grid{
@@ -660,54 +657,80 @@ nav a:hover::after{
 
   grid-template-columns:repeat(4,1fr);
 
-  gap:16px;
+  gap:18px;
 
-  margin-top:36px;
+  margin-top:40px;
 }
+
+
+/* CARD */
 
 .skill-card{
   position:relative;
 
-  min-height:275px;
+  min-height:340px;
 
-  padding:24px;
+  display:flex;
+
+  flex-direction:column;
+
+  padding:20px;
 
   border:1px solid var(--line);
 
-  border-radius:20px;
+  border-radius:22px;
 
   background:var(--white);
 
+  overflow:hidden;
+
   transition:
-    transform .2s ease,
-    border-color .2s ease,
-    box-shadow .2s ease;
+    transform .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
 }
 
+
 .skill-card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-6px);
 
   border-color:#aab5c3;
 
   box-shadow:
-    0 14px 34px
+    0 16px 36px
     rgba(17,41,79,.08);
 }
 
+
+/* NUMBER */
+
 .skill-number{
+  position:relative;
+
+  z-index:2;
+
   display:block;
 
   color:var(--muted);
 
-  font-size:12px;
+  font-size:11px;
+
+  font-weight:700;
+
+  letter-spacing:.1em;
 }
 
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
 .skill-visual{
-  width:58px;
+  width:100%;
 
-  height:58px;
+  height:170px;
 
-  margin-top:24px;
+  margin-top:10px;
 
   display:flex;
 
@@ -715,37 +738,70 @@ nav a:hover::after{
 
   justify-content:center;
 
-  border-radius:16px;
+  padding:5px;
 
-  background:var(--soft);
+  overflow:hidden;
 }
 
-.skill-visual img{
-  width:34px;
 
-  height:34px;
+/* IMAGE */
+
+.skill-visual img{
+  width:100%;
+
+  height:100%;
+
+  max-width:220px;
 
   object-fit:contain;
 
-  opacity:.9;
+  object-position:center;
+
+  display:block;
+
+  transition:
+    transform .3s ease;
 }
 
-.skill-card h3{
-  margin:20px 0 8px;
+
+/* slightly enlarge on hover */
+
+.skill-card:hover
+.skill-visual img{
+  transform:scale(1.04);
+}
+
+
+/* =========================================================
+   SKILL TEXT
+========================================================= */
+
+.skill-content{
+  margin-top:auto;
+
+  padding-top:12px;
+}
+
+
+.skill-content h3{
+  margin:0 0 8px;
 
   color:var(--navy);
 
   font-size:21px;
+
+  line-height:1.25;
 }
 
-.skill-card p{
+
+.skill-content p{
   margin:0;
 
   color:var(--muted);
 
-  font-size:14px;
+  font-size:13px;
 
-  line-height:1.7;
+  line-height:1.65;
 }
 
 
@@ -763,21 +819,11 @@ nav a:hover::after{
   margin-top:38px;
 }
 
-
-/*
-  3 card pertama
-*/
-
 .project-card:nth-child(1),
 .project-card:nth-child(2),
 .project-card:nth-child(3){
   grid-column:span 2;
 }
-
-
-/*
-  Dua card terakhir dibuat rata tengah
-*/
 
 .project-card:nth-child(4){
   grid-column:2 / span 2;
@@ -786,7 +832,6 @@ nav a:hover::after{
 .project-card:nth-child(5){
   grid-column:4 / span 2;
 }
-
 
 .project-card{
   display:block;
@@ -814,9 +859,6 @@ nav a:hover::after{
     0 16px 36px
     rgba(17,41,79,.09);
 }
-
-
-/* kotak project diperkecil */
 
 .project-preview{
   height:210px;
@@ -1092,7 +1134,7 @@ footer{
 
 
 /* =========================================================
-   TABLET
+   SMALL DESKTOP / TABLET LANDSCAPE
 ========================================================= */
 
 @media(max-width:1100px){
@@ -1100,6 +1142,15 @@ footer{
   .skills-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
+  .skill-card{
+    min-height:330px;
+  }
+
+  .skill-visual{
+    height:180px;
+  }
+
 
   .project-grid{
     grid-template-columns:repeat(2,1fr);
@@ -1123,6 +1174,10 @@ footer{
 
 }
 
+
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media(max-width:900px){
 
@@ -1258,6 +1313,9 @@ footer{
     gap:10px;
   }
 
+
+  /* SKILLS */
+
   .skills-grid{
     grid-template-columns:1fr;
   }
@@ -1269,6 +1327,21 @@ footer{
   .caption{
     margin-top:15px;
   }
+
+  .skill-card{
+    min-height:310px;
+  }
+
+  .skill-visual{
+    height:165px;
+  }
+
+  .skill-visual img{
+    max-width:210px;
+  }
+
+
+  /* PROJECTS */
 
   .project-grid{
     grid-template-columns:1fr;
@@ -1291,6 +1364,9 @@ footer{
   .project-body h3{
     font-size:21px;
   }
+
+
+  /* CONTACT */
 
   .contact-card{
     grid-template-columns:
