@@ -634,17 +634,19 @@ nav a:hover::after{
 
   justify-content:space-between;
 
-  gap:32px;
+  gap:40px;
 }
 
 .caption{
-  max-width:430px;
+  max-width:380px;
 
-  margin:0;
+  margin:0 0 6px;
 
   color:var(--muted);
 
   font-size:15px;
+
+  line-height:1.6;
 }
 
 
@@ -655,9 +657,13 @@ nav a:hover::after{
 .skills-section{
   padding-top:68px;
 
-  padding-bottom:68px;
+  padding-bottom:72px;
 }
 
+
+/* =========================================================
+   SKILL GRID
+========================================================= */
 
 .skills-grid{
   display:grid;
@@ -671,19 +677,21 @@ nav a:hover::after{
 
 
 /* =========================================================
-   SMALL COMPACT CARD
+   SKILL CARD
 ========================================================= */
 
 .skill-card{
   position:relative;
 
-  height:235px;
+  height:190px;
 
   display:flex;
 
   flex-direction:column;
 
-  padding:16px 18px 18px;
+  justify-content:space-between;
+
+  padding:18px 20px;
 
   border:1px solid var(--line);
 
@@ -691,14 +699,11 @@ nav a:hover::after{
 
   background:var(--white);
 
-  overflow:hidden;
-
   transition:
     transform .22s ease,
     border-color .22s ease,
     box-shadow .22s ease;
 }
-
 
 .skill-card:hover{
   transform:translateY(-4px);
@@ -706,15 +711,29 @@ nav a:hover::after{
   border-color:#aab5c3;
 
   box-shadow:
-    0 12px 26px
+    0 12px 28px
     rgba(17,41,79,.065);
 }
 
 
-/* NUMBER */
+/* =========================================================
+   SKILL TOP
+========================================================= */
+
+.skill-top{
+  min-height:72px;
+
+  display:flex;
+
+  align-items:flex-start;
+
+  justify-content:space-between;
+
+  gap:15px;
+}
 
 .skill-number{
-  display:block;
+  padding-top:2px;
 
   color:var(--muted);
 
@@ -722,76 +741,58 @@ nav a:hover::after{
 
   font-weight:700;
 
-  letter-spacing:.08em;
+  letter-spacing:.1em;
 }
 
 
 /* =========================================================
-   SMALL DECORATIVE IMAGE
+   SKILL IMAGE
 ========================================================= */
 
-.skill-visual{
-  width:100%;
-
-  height:82px;
-
-  margin:5px 0 5px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-}
-
-
-.skill-visual img{
-  display:block;
-
+.skill-image{
   width:auto;
 
   height:auto;
 
-  max-width:92px;
+  max-width:82px;
 
-  max-height:78px;
+  max-height:66px;
 
   object-fit:contain;
 
-  object-position:center;
+  display:block;
 
-  transition:
-    transform .22s ease;
+  margin-right:4px;
+
+  transition:transform .25s ease;
 }
 
-
-.skill-card:hover
-.skill-visual img{
-  transform:scale(1.025);
+.skill-card:hover .skill-image{
+  transform:
+    translateY(-2px)
+    scale(1.03);
 }
 
 
 /* =========================================================
-   SKILL TEXT
+   SKILL CONTENT
 ========================================================= */
 
 .skill-content{
-  margin-top:auto;
+  margin-top:12px;
 }
-
 
 .skill-content h3{
   margin:0 0 5px;
 
   color:var(--navy);
 
-  font-size:18px;
+  font-size:19px;
 
   font-weight:800;
 
   line-height:1.2;
 }
-
 
 .skill-content p{
   margin:0;
@@ -800,7 +801,7 @@ nav a:hover::after{
 
   font-size:12px;
 
-  line-height:1.5;
+  line-height:1.55;
 }
 
 
@@ -1142,28 +1143,14 @@ footer{
     grid-template-columns:repeat(2,1fr);
   }
 
-
   .skill-card{
-    height:225px;
-  }
-
-
-  .skill-visual{
-    height:76px;
-  }
-
-
-  .skill-visual img{
-    max-width:88px;
-
-    max-height:72px;
+    height:180px;
   }
 
 
   .project-grid{
     grid-template-columns:repeat(2,1fr);
   }
-
 
   .project-card:nth-child(1),
   .project-card:nth-child(2),
@@ -1172,7 +1159,6 @@ footer{
   .project-card:nth-child(5){
     grid-column:auto;
   }
-
 
   .project-card:nth-child(5){
     grid-column:1 / -1;
@@ -1203,13 +1189,11 @@ footer{
     overflow:visible;
   }
 
-
   .hero-visual{
     transform:none;
 
     justify-content:center;
   }
-
 
   .scribble{
     left:auto;
@@ -1219,17 +1203,14 @@ footer{
     top:70px;
   }
 
-
   .split,
   .contact{
     grid-template-columns:1fr;
   }
 
-
   .workflow{
     grid-template-columns:1fr;
   }
-
 
   .workflow em{
     text-align:center;
@@ -1256,26 +1237,21 @@ footer{
     padding:16px 22px;
   }
 
-
   .brand{
     font-size:9px;
   }
-
 
   nav{
     gap:10px;
   }
 
-
   nav a{
     font-size:9px;
   }
 
-
   .section{
     padding:58px 22px;
   }
-
 
   .hero{
     padding-top:45px;
@@ -1283,21 +1259,17 @@ footer{
     padding-bottom:45px;
   }
 
-
   .hero h1{
     font-size:clamp(48px,14vw,70px);
   }
-
 
   .signature{
     font-size:clamp(27px,8vw,38px);
   }
 
-
   .hero-text{
     font-size:16px;
   }
-
 
   .actions{
     flex-direction:column;
@@ -1305,16 +1277,13 @@ footer{
     align-items:stretch;
   }
 
-
   .btn{
     width:100%;
   }
 
-
   .hero-visual{
     min-height:340px;
   }
-
 
   .portrait-shell{
     width:220px;
@@ -1322,11 +1291,9 @@ footer{
     height:275px;
   }
 
-
   .profile-photo{
     width:285px;
   }
-
 
   .scribble{
     right:-4px;
@@ -1335,7 +1302,6 @@ footer{
 
     font-size:14px;
   }
-
 
   .experience-top{
     flex-direction:column;
@@ -1346,54 +1312,44 @@ footer{
 
   /* SKILLS */
 
-  .skills-grid{
-    grid-template-columns:1fr;
-  }
-
-
   .section-heading{
     display:block;
   }
-
 
   .caption{
     margin-top:15px;
   }
 
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
 
   .skill-card{
-    height:210px;
+    height:auto;
+
+    min-height:165px;
   }
 
-
-  .skill-visual{
-    height:68px;
+  .skill-top{
+    min-height:60px;
   }
 
+  .skill-image{
+    max-width:76px;
 
-  .skill-visual img{
-    max-width:80px;
-
-    max-height:64px;
+    max-height:60px;
   }
-
 
   .skill-content h3{
     font-size:18px;
   }
 
 
-  .skill-content p{
-    font-size:12px;
-  }
-
-
-  /* PROJECT */
+  /* PROJECTS */
 
   .project-grid{
     grid-template-columns:1fr;
   }
-
 
   .project-card:nth-child(1),
   .project-card:nth-child(2),
@@ -1405,11 +1361,9 @@ footer{
     width:100%;
   }
 
-
   .project-preview{
     height:220px;
   }
-
 
   .project-body h3{
     font-size:21px;
@@ -1424,7 +1378,6 @@ footer{
       1fr
       auto;
   }
-
 
   footer{
     padding:24px 22px;
@@ -1442,7 +1395,6 @@ footer{
   html{
     scroll-behavior:auto;
   }
-
 
   *,
   *::before,
