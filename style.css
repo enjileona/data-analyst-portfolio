@@ -653,9 +653,9 @@ nav a:hover::after{
 ========================================================= */
 
 .skills-section{
-  padding-top:76px;
+  padding-top:68px;
 
-  padding-bottom:76px;
+  padding-bottom:68px;
 }
 
 
@@ -664,50 +664,50 @@ nav a:hover::after{
 
   grid-template-columns:repeat(4,1fr);
 
-  gap:16px;
+  gap:14px;
 
-  margin-top:32px;
+  margin-top:28px;
 }
 
 
 /* =========================================================
-   SKILL CARD
+   SMALL COMPACT CARD
 ========================================================= */
 
 .skill-card{
   position:relative;
 
-  min-height:285px;
+  height:235px;
 
   display:flex;
 
   flex-direction:column;
 
-  padding:18px 20px 20px;
+  padding:16px 18px 18px;
 
   border:1px solid var(--line);
 
-  border-radius:20px;
+  border-radius:18px;
 
   background:var(--white);
 
   overflow:hidden;
 
   transition:
-    transform .25s ease,
-    border-color .25s ease,
-    box-shadow .25s ease;
+    transform .22s ease,
+    border-color .22s ease,
+    box-shadow .22s ease;
 }
 
 
 .skill-card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-4px);
 
   border-color:#aab5c3;
 
   box-shadow:
-    0 14px 30px
-    rgba(17,41,79,.07);
+    0 12px 26px
+    rgba(17,41,79,.065);
 }
 
 
@@ -718,59 +718,61 @@ nav a:hover::after{
 
   color:var(--muted);
 
-  font-size:11px;
+  font-size:10px;
 
   font-weight:700;
 
-  letter-spacing:.09em;
+  letter-spacing:.08em;
 }
 
 
 /* =========================================================
-   IMAGE
+   SMALL DECORATIVE IMAGE
 ========================================================= */
 
 .skill-visual{
   width:100%;
 
-  height:120px;
+  height:82px;
+
+  margin:5px 0 5px;
 
   display:flex;
 
   align-items:center;
 
   justify-content:center;
-
-  margin:8px 0 8px;
-
-  overflow:hidden;
 }
 
 
 .skill-visual img{
+  display:block;
+
   width:auto;
 
   height:auto;
 
-  max-width:125px;
+  max-width:92px;
 
-  max-height:105px;
+  max-height:78px;
 
   object-fit:contain;
 
-  display:block;
+  object-position:center;
 
-  transition:transform .25s ease;
+  transition:
+    transform .22s ease;
 }
 
 
-.skill-card:hover .skill-visual img{
-  transform:scale(1.035);
+.skill-card:hover
+.skill-visual img{
+  transform:scale(1.025);
 }
 
 
 /* =========================================================
-   SKILL CONTENT
+   SKILL TEXT
 ========================================================= */
 
 .skill-content{
@@ -779,13 +781,15 @@ nav a:hover::after{
 
 
 .skill-content h3{
-  margin:0 0 7px;
+  margin:0 0 5px;
 
   color:var(--navy);
 
-  font-size:20px;
+  font-size:18px;
 
-  line-height:1.25;
+  font-weight:800;
+
+  line-height:1.2;
 }
 
 
@@ -794,9 +798,9 @@ nav a:hover::after{
 
   color:var(--muted);
 
-  font-size:13px;
+  font-size:12px;
 
-  line-height:1.55;
+  line-height:1.5;
 }
 
 
@@ -1138,18 +1142,28 @@ footer{
     grid-template-columns:repeat(2,1fr);
   }
 
+
   .skill-card{
-    min-height:270px;
+    height:225px;
   }
 
+
   .skill-visual{
-    height:110px;
+    height:76px;
+  }
+
+
+  .skill-visual img{
+    max-width:88px;
+
+    max-height:72px;
   }
 
 
   .project-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
 
   .project-card:nth-child(1),
   .project-card:nth-child(2),
@@ -1158,6 +1172,7 @@ footer{
   .project-card:nth-child(5){
     grid-column:auto;
   }
+
 
   .project-card:nth-child(5){
     grid-column:1 / -1;
@@ -1188,11 +1203,13 @@ footer{
     overflow:visible;
   }
 
+
   .hero-visual{
     transform:none;
 
     justify-content:center;
   }
+
 
   .scribble{
     left:auto;
@@ -1202,14 +1219,17 @@ footer{
     top:70px;
   }
 
+
   .split,
   .contact{
     grid-template-columns:1fr;
   }
 
+
   .workflow{
     grid-template-columns:1fr;
   }
+
 
   .workflow em{
     text-align:center;
@@ -1236,21 +1256,26 @@ footer{
     padding:16px 22px;
   }
 
+
   .brand{
     font-size:9px;
   }
+
 
   nav{
     gap:10px;
   }
 
+
   nav a{
     font-size:9px;
   }
 
+
   .section{
     padding:58px 22px;
   }
+
 
   .hero{
     padding-top:45px;
@@ -1258,17 +1283,21 @@ footer{
     padding-bottom:45px;
   }
 
+
   .hero h1{
     font-size:clamp(48px,14vw,70px);
   }
+
 
   .signature{
     font-size:clamp(27px,8vw,38px);
   }
 
+
   .hero-text{
     font-size:16px;
   }
+
 
   .actions{
     flex-direction:column;
@@ -1276,13 +1305,16 @@ footer{
     align-items:stretch;
   }
 
+
   .btn{
     width:100%;
   }
 
+
   .hero-visual{
     min-height:340px;
   }
+
 
   .portrait-shell{
     width:220px;
@@ -1290,9 +1322,11 @@ footer{
     height:275px;
   }
 
+
   .profile-photo{
     width:285px;
   }
+
 
   .scribble{
     right:-4px;
@@ -1301,6 +1335,7 @@ footer{
 
     font-size:14px;
   }
+
 
   .experience-top{
     flex-direction:column;
@@ -1315,34 +1350,50 @@ footer{
     grid-template-columns:1fr;
   }
 
+
   .section-heading{
     display:block;
   }
+
 
   .caption{
     margin-top:15px;
   }
 
+
   .skill-card{
-    min-height:250px;
+    height:210px;
   }
+
 
   .skill-visual{
-    height:100px;
+    height:68px;
   }
+
 
   .skill-visual img{
-    max-width:115px;
+    max-width:80px;
 
-    max-height:90px;
+    max-height:64px;
   }
 
 
-  /* PROJECTS */
+  .skill-content h3{
+    font-size:18px;
+  }
+
+
+  .skill-content p{
+    font-size:12px;
+  }
+
+
+  /* PROJECT */
 
   .project-grid{
     grid-template-columns:1fr;
   }
+
 
   .project-card:nth-child(1),
   .project-card:nth-child(2),
@@ -1354,14 +1405,18 @@ footer{
     width:100%;
   }
 
+
   .project-preview{
     height:220px;
   }
+
 
   .project-body h3{
     font-size:21px;
   }
 
+
+  /* CONTACT */
 
   .contact-card{
     grid-template-columns:
@@ -1369,6 +1424,7 @@ footer{
       1fr
       auto;
   }
+
 
   footer{
     padding:24px 22px;
@@ -1386,6 +1442,7 @@ footer{
   html{
     scroll-behavior:auto;
   }
+
 
   *,
   *::before,
