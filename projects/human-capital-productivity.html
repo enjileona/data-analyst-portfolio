@@ -1,62 +1,1328 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Human Capital Productivity Analysis — a people analytics case study by Euanggay Leona Enji.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Human Capital Productivity | Euanggay Leona Enji</title>
+
+  <meta
+    name="description"
+    content="Human Capital Productivity Analysis — A Tableau and Excel people analytics project by Euanggay Leona Enji."
+  >
+
   <style>
-    :root{--navy:#11294f;--navy2:#172f55;--red:#a6191f;--ink:#1d2633;--muted:#68788a;--line:#dce2e8;--soft:#f5f7fa;--white:#fff;--header:70px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%}
-    .container{width:min(1160px,88%);margin:auto}.header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:var(--header);display:flex;justify-content:space-between;align-items:center;gap:18px}.brand{color:var(--navy);font-weight:900;letter-spacing:.16em;font-size:10px;line-height:1}.navlinks{display:flex;align-items:center;gap:24px}.navlinks a{font-size:11px;letter-spacing:.08em;font-weight:700}.navlinks a:hover{color:var(--red)}.back{display:inline-flex;gap:8px;align-items:center}
-    .hero{background:var(--navy);color:white;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff0a 1px,transparent 1px),linear-gradient(90deg,#ffffff0a 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(90deg,transparent,#000)}.hero-inner{position:relative;padding:76px 0 72px;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}.eyebrow{font-size:11px;letter-spacing:.17em;font-weight:800;text-transform:uppercase;color:#a9c4e7}.hero h1{font-size:clamp(44px,5.8vw,78px);line-height:.98;letter-spacing:-.055em;margin:20px 0 24px;max-width:750px}.hero h1 span{color:#f18388}.hero .intro{color:#d8e4f4;max-width:620px;font-size:18px;line-height:1.75}.tags{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0}.tag{border:1px solid #ffffff40;color:#e5edf8;border-radius:100px;padding:6px 12px;font-size:11px;font-weight:700}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:45px;padding:11px 18px;border-radius:9px;font-size:13px;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--navy);transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.red{background:var(--red);border-color:var(--red);color:white}.btn.outline{background:transparent;color:white;border-color:#ffffff6a}.btn[aria-disabled=true]{opacity:.68;cursor:not-allowed}.hero-art{min-height:300px;border:1px solid #ffffff24;border-radius:24px;padding:22px;background:linear-gradient(145deg,#24436e,#0d2342);box-shadow:0 24px 65px #06142d66;transform:rotate(2deg)}.art-top{display:flex;justify-content:space-between;align-items:center;color:#b7cce6;font-size:10px;letter-spacing:.08em}.art-pill{background:#1fbaad;border-radius:100px;width:42px;height:9px}.art-bars{display:flex;align-items:end;gap:13px;height:150px;border-bottom:1px solid #ffffff35;padding:20px 8px 0}.art-bars i{flex:1;background:linear-gradient(#8abff7,#2f75bf);border-radius:7px 7px 0 0;opacity:.85}.art-bars i:nth-child(2n){background:linear-gradient(#8bd9d0,#2b9992)}.art-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.art-metric{background:#ffffff10;border:1px solid #ffffff1e;border-radius:10px;padding:12px}.art-metric b{display:block;font-size:20px}.art-metric small{font-size:9px;color:#c7d9eb}
-    section.content{padding:82px 0;border-bottom:1px solid var(--line)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}.section-no{font-size:11px;font-weight:800;letter-spacing:.17em;color:var(--red);margin:0 0 8px}.section-head h2{font-size:clamp(28px,3.6vw,46px);letter-spacing:-.04em;color:var(--navy);line-height:1.08;margin:0}.section-sub{max-width:410px;font-size:14px;color:var(--muted);margin:0}.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:35px}.overview p{font-size:17px;line-height:1.8;margin-top:0}.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.info{border:1px solid var(--line);border-radius:13px;padding:20px;background:#fff}.info small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}.info strong{font-size:17px;color:var(--navy)}.question{background:#f6f8fb;border-left:3px solid var(--red);padding:22px 24px;border-radius:0 13px 13px 0;font-size:18px;font-weight:700;color:var(--navy);margin-top:22px}
-    .preview{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 18px 50px #11294f0a}.preview-toolbar{padding:16px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.preview-toolbar strong{font-size:13px;color:var(--navy)}.preview-toolbar span{font-size:11px;color:var(--muted)}.preview-image{position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f3f7fb,#e8eef6);padding:26px}.preview-image img{width:100%;height:auto;max-height:650px;object-fit:contain;display:none}.preview-empty{width:min(650px,100%);text-align:center;color:var(--navy)}.preview-empty .icon{width:64px;height:64px;border:2px dashed #9fb0c4;border-radius:15px;margin:0 auto 18px;display:grid;place-items:center;font-size:28px}.preview-empty strong{display:block;font-size:20px}.preview-empty p{font-size:13px;color:var(--muted);max-width:410px;margin:9px auto}.preview-note{padding:14px 22px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
-    .insights{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.insight{border:1px solid var(--line);border-radius:18px;padding:25px;background:#fff}.insight .num{font-size:11px;color:var(--red);font-weight:800;letter-spacing:.1em}.insight h3{font-size:21px;color:var(--navy);line-height:1.2;margin:15px 0 10px}.insight p{font-size:14px;color:var(--muted);margin:0}.insight .placeholder{background:#f5f7fa;border:1px dashed #c6d0dd;padding:12px;border-radius:9px;margin-top:20px;font-size:12px;color:#64758a}
-    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{border:1px solid var(--line);border-radius:15px;padding:22px;position:relative}.step small{color:var(--red);font-weight:800;letter-spacing:.12em}.step h3{font-size:19px;color:var(--navy);margin:12px 0 8px}.step p{font-size:13px;color:var(--muted);margin:0}.step:not(:last-child):after{content:'→';position:absolute;right:-12px;top:45%;background:white;color:var(--red);font-weight:900;padding:0 5px;z-index:2}
-    .recommendations{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.rec{background:#f7f9fc;border:1px solid var(--line);border-radius:15px;padding:23px}.rec h3{color:var(--navy);font-size:17px;margin:0 0 8px}.rec p{font-size:13px;color:var(--muted);margin:0}.rec .arrow{color:var(--red);font-size:22px;margin:10px 0}
-    .cta{background:var(--navy);color:white;border-radius:23px;padding:42px;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{font-size:clamp(25px,3.5vw,40px);letter-spacing:-.04em;margin:0 0 8px}.cta p{color:#c9d9eb;margin:0;max-width:550px;font-size:14px}.footer{padding:25px 0;color:var(--muted);font-size:12px}.footer .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-    @media(max-width:950px){.hero-inner{grid-template-columns:1fr}.hero-art{max-width:580px;min-height:270px;transform:none}.overview{grid-template-columns:1fr}.insights,.recommendations{grid-template-columns:repeat(2,1fr)}.process{grid-template-columns:repeat(2,1fr)}.step:after{display:none}}
-    @media(max-width:600px){.container{width:calc(100% - 36px)}.navlinks{gap:12px}.navlinks a{font-size:10px}.hero-inner{padding:56px 0}.hero h1{font-size:clamp(42px,12vw,58px)}.hero .intro{font-size:15px}.hero-art{min-height:230px;padding:16px}.art-bars{height:120px}.art-metric{padding:8px}.art-metric b{font-size:15px}section.content{padding:58px 0}.section-head{display:block}.section-sub{margin-top:13px}.info-grid,.insights,.process,.recommendations{grid-template-columns:1fr}.preview-image{min-height:250px;padding:14px}.cta{padding:28px;display:block}.cta .btn{margin-top:20px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+    :root {
+      --navy: #11294f;
+      --navy-dark: #0b1d3b;
+      --red: #a6191f;
+      --ink: #1d2633;
+      --muted: #6c7786;
+      --line: #dce2e8;
+      --soft: #f5f7fa;
+      --white: #ffffff;
+      --blue: #146ef5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* HEADER */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      min-height: 68px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 6vw;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: .14em;
+      font-weight: 900;
+      color: var(--navy);
+    }
+
+    .header-right {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .header-right a {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .header-right a:hover {
+      color: var(--red);
+    }
+
+    /* GENERAL */
+
+    .container {
+      max-width: 1380px;
+      margin: auto;
+      padding: 0 6vw;
+    }
+
+    .section {
+      padding: 75px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p {
+      overflow-wrap: break-word;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: var(--navy);
+      font-size: clamp(34px, 4.4vw, 58px);
+      font-weight: 900;
+      letter-spacing: -.045em;
+      line-height: 1.05;
+    }
+
+    .section-description {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 88px 0 70px;
+      background:
+        linear-gradient(rgba(17,41,79,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,41,79,.035) 1px, transparent 1px);
+      background-size: 32px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(46px, 6vw, 88px);
+      font-weight: 900;
+      line-height: .98;
+      letter-spacing: -.055em;
+      color: var(--navy);
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin: 25px 0;
+      color: #485568;
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .tags {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      padding: 7px 13px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      background: var(--white);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(17,41,79,.08);
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--white);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 14px;
+    }
+
+    .hero-stat {
+      padding: 25px 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+    }
+
+    .hero-stat strong {
+      display: block;
+      color: var(--navy);
+      font-size: 36px;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .hero-stat span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* OVERVIEW */
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .overview-text {
+      max-width: 760px;
+      font-size: 17px;
+      line-height: 1.9;
+      color: #485568;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .info-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--soft);
+    }
+
+    .info-card small {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .info-card strong {
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* DASHBOARD PREVIEW */
+
+    .dashboard-section {
+      background: #fbfcfe;
+    }
+
+    .dashboard-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 35px;
+      margin-bottom: 30px;
+    }
+
+    .dashboard-heading h2 {
+      margin-bottom: 0;
+    }
+
+    .dashboard-heading p {
+      max-width: 420px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dashboard-frame {
+      overflow: hidden;
+      border: 1px solid #d7e0e9;
+      border-radius: 22px;
+      background: var(--white);
+      box-shadow: 0 16px 48px rgba(17,41,79,.045);
+    }
+
+    .dashboard-frame-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 17px 25px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .dashboard-frame-header strong {
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .dashboard-frame-header span {
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: .1em;
+    }
+
+    /* PREVIEW DIBATASI AGAR TIDAK MEMENUHI LAYAR */
+
+    .dashboard-preview {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 340px;
+      padding: 20px 20px 0;
+      overflow: hidden;
+      background: #f0f4f9;
+      cursor: zoom-in;
+    }
+
+    .dashboard-preview img {
+      display: block;
+      width: 75%;
+      max-width: 750px;
+      height: auto;
+      object-fit: contain;
+      object-position: top center;
+      border-radius: 9px 9px 0 0;
+      box-shadow: 0 8px 24px rgba(17,41,79,.08);
+    }
+
+    .dashboard-preview::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 95px;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(240,244,249,0),
+        rgba(240,244,249,.96)
+      );
+    }
+
+    .preview-label {
+      position: absolute;
+      z-index: 2;
+      bottom: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      background: rgba(255,255,255,.96);
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .dashboard-frame-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      padding: 20px 25px;
+    }
+
+    .dashboard-frame-footer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .dashboard-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .dashboard-actions .btn {
+      min-height: 42px;
+      font-size: 12px;
+    }
+
+    /* KEY INSIGHTS */
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .insight-card {
+      min-height: 230px;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+    }
+
+    .insight-number {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .insight-card h3 {
+      margin: 24px 0 10px;
+      color: var(--navy);
+      font-size: 22px;
+      line-height: 1.2;
+    }
+
+    .insight-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .insight-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      font-style: italic;
+    }
+
+    /* WORKFLOW */
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 35px;
+    }
+
+    .workflow-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--soft);
+    }
+
+    .workflow-card span {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .workflow-card h3 {
+      margin: 14px 0 8px;
+      color: var(--navy);
+      font-size: 19px;
+    }
+
+    .workflow-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* BUSINESS VALUE */
+
+    .value-section {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .value-section h2 {
+      color: var(--white);
+    }
+
+    .value-section .eyebrow {
+      color: #ff9a9e;
+    }
+
+    .value-description {
+      max-width: 800px;
+      color: #c6d6ea;
+      font-size: 17px;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .value-card {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 16px;
+      background: rgba(255,255,255,.055);
+    }
+
+    .value-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--white);
+      font-size: 18px;
+    }
+
+    .value-card p {
+      margin: 0;
+      color: #c6d6ea;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* CTA */
+
+    .final-cta {
+      padding: 75px 0;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(34px, 4.5vw, 56px);
+    }
+
+    .final-cta p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: var(--muted);
+    }
+
+    .final-cta .buttons {
+      justify-content: center;
+    }
+
+    /* FOOTER */
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 25px 6vw;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* IMAGE MODAL */
+
+    .image-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px 20px;
+      background: rgba(5,15,32,.94);
+    }
+
+    .image-modal.open {
+      display: flex;
+    }
+
+    .image-modal img {
+      max-width: 95vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      padding: 8px 15px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 8px;
+      background: rgba(255,255,255,.1);
+      color: white;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1000px) {
+      .hero-grid,
+      .overview-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .insights-grid,
+      .value-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .dashboard-preview img {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .site-header {
+        padding: 14px 22px;
+      }
+
+      .header-right {
+        gap: 12px;
+      }
+
+      .header-right a {
+        font-size: 10px;
+      }
+
+      .container {
+        padding: 0 22px;
+      }
+
+      .section {
+        padding: 55px 0;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 11vw, 60px);
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-side,
+      .info-grid,
+      .insights-grid,
+      .workflow-grid,
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dashboard-heading {
+        display: block;
+      }
+
+      .dashboard-preview {
+        height: 225px;
+        padding: 12px 10px 0;
+      }
+
+      .dashboard-preview img {
+        width: 100%;
+      }
+
+      .dashboard-frame-header,
+      .dashboard-frame-footer {
+        padding: 15px;
+      }
+
+      .dashboard-frame-header strong {
+        font-size: 12px;
+      }
+
+      .dashboard-frame-header span {
+        font-size: 9px;
+      }
+
+      .dashboard-actions {
+        width: 100%;
+      }
+
+      .dashboard-actions .btn {
+        flex: 1;
+      }
+
+      .buttons {
+        gap: 10px;
+      }
+
+      .btn {
+        font-size: 12px;
+      }
+
+      footer {
+        padding: 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header class="header"><div class="container nav"><a class="brand" href="../index.html">EUANGGAY<br>ENJI</a><div class="navlinks"><a href="../index.html#work" class="back">← ALL PROJECTS</a><a href="../index.html#contact">CONTACT</a></div></div></header>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      EUANGGAY<br>ENJI
+    </a>
+
+    <div class="header-right">
+      <a href="../index.html#work">← ALL PROJECTS</a>
+      <a href="#dashboard">DASHBOARD</a>
+      <a href="#insights">INSIGHTS</a>
+    </div>
+  </header>
+
   <main>
-    <section class="hero"><div class="container hero-inner"><div><div class="eyebrow">Featured Project / 01 · People Analytics</div><h1>Human Capital<br>Productivity <span>Analysis*</span></h1><p class="intro">Connecting workforce and financial performance data to support productivity monitoring and better management decisions.</p><div class="tags"><span class="tag">Tableau</span><span class="tag">Excel</span><span class="tag">People Analytics</span><span class="tag">Data Visualization</span></div><div class="actions"><a class="btn red tableau-link" href="#dashboard">Explore Dashboard ↗</a><a class="btn outline" href="#insights">See Key Insights ↓</a></div></div><div class="hero-art" aria-label="Abstract visualization of workforce analytics"><div class="art-top"><strong>WORKFORCE ANALYTICS</strong><span class="art-pill"></span></div><div class="art-bars"><i style="height:44%"></i><i style="height:65%"></i><i style="height:54%"></i><i style="height:78%"></i><i style="height:61%"></i><i style="height:88%"></i><i style="height:71%"></i></div><div class="art-bottom"><div class="art-metric"><b>HR</b><small>People Data</small></div><div class="art-metric"><b>KPI</b><small>Productivity</small></div><div class="art-metric"><b>BI</b><small>Insights</small></div></div></div></div></section>
-    <section class="content" id="overview"><div class="container"><div class="section-head"><div><p class="section-no">01 / PROJECT OVERVIEW</p><h2>What problem does<br>this project solve?</h2></div><p class="section-sub">A concise explanation of the business question and the scope of your analysis.</p></div><div class="overview"><div><p>Workforce size alone does not explain organizational productivity. This project explores how employee and financial metrics can be brought together to help management compare productivity across business units and identify areas for further investigation.</p><div class="question">How can workforce productivity be evaluated alongside business performance?</div></div><div class="info-grid"><div class="info"><small>Scope</small><strong>1,000+ employees</strong></div><div class="info"><small>Focus</small><strong>Workforce productivity</strong></div><div class="info"><small>Tools</small><strong>Excel · Tableau</strong></div><div class="info"><small>Deliverable</small><strong>Interactive dashboard</strong></div></div></div></div></section>
-    <section class="content" id="dashboard"><div class="container"><div class="section-head"><div><p class="section-no">02 / THE OUTPUT</p><h2>Dashboard preview.</h2></div><p class="section-sub">The main deliverable: an interactive Tableau dashboard for exploring workforce and financial performance indicators.</p></div><div class="preview"><div class="preview-toolbar"><strong>Human Capital Productivity · Tableau</strong><span>PROJECT PREVIEW</span></div><div class="preview-image"><img id="dashboardShot" alt="Screenshot of the Human Capital Productivity Tableau dashboard"><div class="preview-empty" id="dashboardEmpty"><div class="icon">▥</div><strong>Your Tableau Dashboard Screenshot</strong><p>Add your image to <code>assets/images/projects/human-productivity-dashboard.png</code> and update the configuration in this HTML file.</p></div></div><div class="preview-note">Public portfolio note: use synthetic or properly anonymized information. Do not publish confidential company or employee data.</div></div><div class="actions"><a class="btn red tableau-link" href="#dashboard">Open Live Tableau Dashboard ↗</a></div></div></section>
-    <section class="content" id="insights"><div class="container"><div class="section-head"><div><p class="section-no">03 / KEY FINDINGS</p><h2>Three insights.<br>One clearer picture.</h2></div><p class="section-sub">Replace these prompts with findings supported by your real dashboard. Avoid inventing percentages or conclusions.</p></div><div class="insights"><article class="insight"><span class="num">INSIGHT 01</span><h3>Productivity by business unit</h3><p>Compare output per employee across units to identify differences worth investigating.</p><div class="placeholder">ADD YOUR FINDING: Which unit stands out, and why?</div></article><article class="insight"><span class="num">INSIGHT 02</span><h3>Workforce cost efficiency</h3><p>Explore the relationship between employee-related costs and business output.</p><div class="placeholder">ADD YOUR FINDING: What does the comparison reveal?</div></article><article class="insight"><span class="num">INSIGHT 03</span><h3>Regional performance patterns</h3><p>Identify regional variation and potential drivers that merit deeper analysis.</p><div class="placeholder">ADD YOUR FINDING: What pattern appears in your data?</div></article></div></div></section>
-    <section class="content" id="process"><div class="container"><div class="section-head"><div><p class="section-no">04 / MY APPROACH</p><h2>From data to decisions.</h2></div><p class="section-sub">A simple overview of the analytical workflow. Adjust the steps to match what you actually performed.</p></div><div class="process"><div class="step"><small>01</small><h3>Collect</h3><p>Organize employee and business performance data.</p></div><div class="step"><small>02</small><h3>Prepare</h3><p>Check consistency, structure fields, and prepare the dataset.</p></div><div class="step"><small>03</small><h3>Calculate</h3><p>Define relevant workforce productivity and cost metrics.</p></div><div class="step"><small>04</small><h3>Visualize</h3><p>Build Tableau views for monitoring and comparison.</p></div></div></div></section>
-    <section class="content" id="recommendations"><div class="container"><div class="section-head"><div><p class="section-no">05 / BUSINESS APPLICATION</p><h2>From insight to action.</h2></div><p class="section-sub">These are possible analytical uses, not confirmed outcomes. Replace them with recommendations supported by your findings.</p></div><div class="recommendations"><div class="rec"><h3>Compare productivity</h3><p>Find business units with different output-per-employee patterns.</p><div class="arrow">↓</div><p><strong>Possible action:</strong> Review operational context and replicable practices.</p></div><div class="rec"><h3>Review cost efficiency</h3><p>Examine the balance between workforce-related expenses and results.</p><div class="arrow">↓</div><p><strong>Possible action:</strong> Investigate material differences before drawing conclusions.</p></div><div class="rec"><h3>Support resource planning</h3><p>Use comparative metrics to prioritize questions for management.</p><div class="arrow">↓</div><p><strong>Possible action:</strong> Inform further workforce allocation analysis.</p></div></div></div></section>
-    <section class="content" id="explore"><div class="container"><div class="cta"><div><h2>Explore the analysis.</h2><p>See the interactive dashboard and explore the visualizations behind this project.</p></div><a class="btn red tableau-link" href="#dashboard">View Live Dashboard ↗</a></div></div></section>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <p class="eyebrow">
+            FEATURED PROJECT / 01 · PEOPLE ANALYTICS
+          </p>
+
+          <h1>
+            HUMAN CAPITAL<br>
+            PRODUCTIVITY<span>*</span>
+          </h1>
+
+          <p class="hero-description">
+            Connecting workforce and financial data to
+            explore employee productivity, cost efficiency,
+            and business performance across organizational units.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Tableau</span>
+            <span class="tag">Excel</span>
+            <span class="tag">People Analytics</span>
+            <span class="tag">Data Visualization</span>
+          </div>
+
+          <div class="buttons">
+            <a
+              class="btn btn-primary tableau-link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Live Dashboard ↗
+            </a>
+
+            <a class="btn" href="#dashboard">
+              View Preview ↓
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="hero-stat">
+            <strong>1,000+</strong>
+            <span>Employees in analysis scope</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>3</strong>
+            <span>Core analytical perspectives</span>
+          </div>
+
+          <div class="hero-stat">
+            <strong>LIVE</strong>
+            <span>Interactive dashboard available</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+
+    <section class="section" id="overview">
+      <div class="container overview-grid">
+
+        <div>
+          <p class="eyebrow">01 / PROJECT OVERVIEW</p>
+
+          <h2>THE BUSINESS<br>QUESTION.</h2>
+
+          <p class="overview-text">
+            How can organizations evaluate workforce
+            productivity by connecting employee data
+            with financial performance indicators?
+          </p>
+
+          <p class="overview-text">
+            This project presents a visual analytics
+            approach to understanding employee distribution,
+            revenue contribution, salary expenses,
+            and productivity differences across business units.
+          </p>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-card">
+            <small>PROJECT TYPE</small>
+            <strong>People Analytics</strong>
+          </div>
+
+          <div class="info-card">
+            <small>PRIMARY TOOL</small>
+            <strong>Tableau</strong>
+          </div>
+
+          <div class="info-card">
+            <small>DATA PROCESSING</small>
+            <strong>Microsoft Excel</strong>
+          </div>
+
+          <div class="info-card">
+            <small>ANALYTICAL FOCUS</small>
+            <strong>Workforce Productivity</strong>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DASHBOARD PREVIEW -->
+
+    <section class="section dashboard-section" id="dashboard">
+      <div class="container">
+
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow">02 / DASHBOARD PREVIEW</p>
+            <h2>THE DASHBOARD.</h2>
+          </div>
+
+          <p>
+            A consolidated view of workforce and
+            financial performance indicators.
+          </p>
+        </div>
+
+        <div class="dashboard-frame">
+
+          <div class="dashboard-frame-header">
+            <strong>Human Capital Productivity · Tableau</strong>
+            <span>PROJECT PREVIEW</span>
+          </div>
+
+          <div
+            class="dashboard-preview"
+            id="dashboardPreview"
+            role="button"
+            tabindex="0"
+            aria-label="View full dashboard screenshot"
+          >
+            <img
+              id="dashboardImage"
+              src="../assets/images/projects/human-productivity-dashboard.png"
+              alt="Human Capital Productivity Dashboard Preview"
+            >
+
+            <span class="preview-label">
+              Click to view full image ↗
+            </span>
+          </div>
+
+          <div class="dashboard-frame-footer">
+            <p>
+              Explore the complete interactive dashboard
+              or view the PDF preview.
+            </p>
+
+            <div class="dashboard-actions">
+              <a
+                class="btn btn-primary tableau-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Dashboard ↗
+              </a>
+
+              <a
+                class="btn pdf-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View PDF ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY INSIGHTS -->
+
+    <section class="section" id="insights">
+      <div class="container">
+
+        <p class="eyebrow">03 / ANALYTICAL PERSPECTIVES</p>
+
+        <h2>WHAT THE DATA<br>CAN REVEAL.</h2>
+
+        <p class="section-description">
+          Three analytical perspectives that help
+          explain the relationship between workforce
+          resources and business performance.
+        </p>
+
+        <div class="insights-grid">
+
+          <article class="insight-card">
+            <span class="insight-number">01 / PRODUCTIVITY</span>
+
+            <h3>Revenue per Employee</h3>
+
+            <p>
+              Compare revenue generated per employee
+              across organizational units to identify
+              differences in workforce productivity.
+            </p>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-number">02 / COST EFFICIENCY</span>
+
+            <h3>Revenue vs Salary Expenses</h3>
+
+            <p>
+              Examine the relationship between
+              workforce-related expenses and revenue
+              to understand differences in cost efficiency.
+            </p>
+          </article>
+
+          <article class="insight-card">
+            <span class="insight-number">03 / REGIONAL ANALYSIS</span>
+
+            <h3>Business Unit Comparison</h3>
+
+            <p>
+              Compare performance indicators
+              across business units and regions
+              to support further investigation.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="insight-note">
+          Note: These are analytical perspectives.
+          Replace them with actual findings when
+          the dashboard analysis is finalized.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- WORKFLOW -->
+
+    <section class="section" id="process">
+      <div class="container">
+
+        <p class="eyebrow">04 / BEHIND THE ANALYSIS</p>
+
+        <h2>HOW I BUILT IT.</h2>
+
+        <p class="section-description">
+          A structured analytical workflow
+          from workforce and financial data
+          to interactive business intelligence.
+        </p>
+
+        <div class="workflow-grid">
+
+          <div class="workflow-card">
+            <span>STEP 01</span>
+            <h3>Data Collection</h3>
+            <p>
+              Gather workforce and financial
+              performance data required
+              for productivity analysis.
+            </p>
+          </div>
+
+          <div class="workflow-card">
+            <span>STEP 02</span>
+            <h3>Data Preparation</h3>
+            <p>
+              Prepare and structure data
+              for consistent comparisons
+              across organizational units.
+            </p>
+          </div>
+
+          <div class="workflow-card">
+            <span>STEP 03</span>
+            <h3>KPI Development</h3>
+            <p>
+              Develop relevant productivity
+              and cost-efficiency indicators
+              to support analysis.
+            </p>
+          </div>
+
+          <div class="workflow-card">
+            <span>STEP 04</span>
+            <h3>Visualization</h3>
+            <p>
+              Build an interactive Tableau
+              dashboard to communicate
+              performance indicators.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BUSINESS VALUE -->
+
+    <section class="section value-section" id="value">
+      <div class="container">
+
+        <p class="eyebrow">05 / BUSINESS VALUE</p>
+
+        <h2>FROM DATA<br>TO DECISIONS.</h2>
+
+        <p class="value-description">
+          The dashboard provides an analytical foundation
+          for understanding workforce productivity
+          and supporting management discussions
+          about organizational performance.
+        </p>
+
+        <div class="value-grid">
+
+          <div class="value-card">
+            <strong>Productivity Visibility</strong>
+            <p>
+              Make workforce productivity
+              indicators easier to monitor
+              and compare across units.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <strong>Cost Efficiency Analysis</strong>
+            <p>
+              Support analysis of the relationship
+              between workforce investment
+              and financial performance.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <strong>Decision Support</strong>
+            <p>
+              Provide structured information
+              to help identify areas that
+              require deeper investigation.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+
+    <section class="final-cta">
+      <div class="container">
+
+        <p class="eyebrow">EXPLORE THE PROJECT</p>
+
+        <h2>SEE THE DATA<br>IN ACTION.</h2>
+
+        <p>
+          Explore the interactive dashboard
+          to examine workforce productivity
+          and business performance indicators.
+        </p>
+
+        <div class="buttons">
+          <a
+            class="btn btn-primary tableau-link"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore Live Dashboard ↗
+          </a>
+
+          <a class="btn" href="../index.html#work">
+            ← Back to Portfolio
+          </a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
-  <footer class="footer"><div class="container"><span>© <span id="year"></span> Euanggay Leona Enji · Data Analyst Portfolio</span><a href="../index.html#work">← Back to selected work</a></div></footer>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <span>
+      © <span id="year"></span>
+      Euanggay Leona Enji
+    </span>
+
+    <span>
+      Data Analyst Portfolio · Human Capital Productivity
+    </span>
+  </footer>
+
+  <!-- FULL IMAGE MODAL -->
+
+  <div
+    class="image-modal"
+    id="imageModal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Full dashboard screenshot"
+  >
+    <button
+      class="modal-close"
+      id="closeModal"
+      type="button"
+      aria-label="Close image"
+    >
+      ×
+    </button>
+
+    <img
+      id="modalImage"
+      src=""
+      alt="Full Human Capital Productivity Dashboard"
+    >
+  </div>
+
+  <!-- JAVASCRIPT -->
+
   <script>
-    /* =====================================================
-       EDIT ONLY THESE VALUES WHEN YOUR ASSETS ARE READY
-       ===================================================== */
+    /* =============================================
+       PROJECT CONFIGURATION
+       UBAH LINK DAN GAMBAR DI SINI
+    ============================================= */
+
     const PROJECT_CONFIG = {
-      tableauUrl: 'https://enjileona.github.io/Human-Capital-Productivity-Dashboard/',
-      dashboardImage: '../assets/images/projects/human-productivity-dashboard.png'
+      tableauUrl:
+        'https://enjileona.github.io/Human-Capital-Productivity-Dashboard/',
+
+      dashboardImage:
+        '../assets/images/projects/human-productivity-dashboard.png',
+
+      pdfUrl:
+        '../assets/projects/Dashboard_Preview.pdf'
     };
-    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* COPYRIGHT YEAR */
+
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+    /* LIVE DASHBOARD LINKS */
+
     document.querySelectorAll('.tableau-link').forEach(link => {
-      if (PROJECT_CONFIG.tableauUrl.trim()) {
-        link.href = PROJECT_CONFIG.tableauUrl;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-      } else {
-        link.href = '#dashboard';
-        link.title = 'Add your Tableau Public URL in PROJECT_CONFIG';
-      }
+      link.href = PROJECT_CONFIG.tableauUrl;
     });
-    const shot = document.getElementById('dashboardShot');
-    const empty = document.getElementById('dashboardEmpty');
-    shot.onload = () => { shot.style.display = 'block'; empty.style.display = 'none'; };
-    shot.onerror = () => { shot.style.display = 'none'; empty.style.display = 'block'; };
-    shot.src = PROJECT_CONFIG.dashboardImage;
+
+    /* PDF LINKS */
+
+    document.querySelectorAll('.pdf-link').forEach(link => {
+      link.href = PROJECT_CONFIG.pdfUrl;
+    });
+
+    /* DASHBOARD IMAGE */
+
+    const dashboardImage =
+      document.getElementById('dashboardImage');
+
+    dashboardImage.src =
+      PROJECT_CONFIG.dashboardImage;
+
+    /* IMAGE MODAL */
+
+    const dashboardPreview =
+      document.getElementById('dashboardPreview');
+
+    const imageModal =
+      document.getElementById('imageModal');
+
+    const modalImage =
+      document.getElementById('modalImage');
+
+    const closeModal =
+      document.getElementById('closeModal');
+
+    function openImageModal() {
+      modalImage.src = PROJECT_CONFIG.dashboardImage;
+      imageModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      closeModal.focus();
+    }
+
+    function closeImageModal() {
+      imageModal.classList.remove('open');
+      document.body.style.overflow = '';
+      dashboardPreview.focus();
+    }
+
+    dashboardPreview.addEventListener(
+      'click',
+      openImageModal
+    );
+
+    dashboardPreview.addEventListener(
+      'keydown',
+      function(event) {
+        if (
+          event.key === 'Enter' ||
+          event.key === ' '
+        ) {
+          event.preventDefault();
+          openImageModal();
+        }
+      }
+    );
+
+    closeModal.addEventListener(
+      'click',
+      closeImageModal
+    );
+
+    imageModal.addEventListener(
+      'click',
+      function(event) {
+        if (event.target === imageModal) {
+          closeImageModal();
+        }
+      }
+    );
+
+    document.addEventListener(
+      'keydown',
+      function(event) {
+        if (
+          event.key === 'Escape' &&
+          imageModal.classList.contains('open')
+        ) {
+          closeImageModal();
+        }
+      }
+    );
   </script>
+
 </body>
 </html>
