@@ -273,6 +273,96 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   .lang button { min-width:27px; padding:4px 5px; }
 }
 
+
+/* ===============================================================
+   HERO COMPACT — MUAT DALAM SATU LAYAR
+   Hanya mengatur skala hero, tidak mengubah bagian lain.
+   Ketinggian hero maksimum mengikuti tinggi layar dikurangi header.
+   =============================================================== */
+.hero-inner {
+  min-height: 0;
+  height: min(600px, calc(100svh - 85px));
+  padding: clamp(20px, 3.5vh, 42px) 0;
+  grid-template-columns: minmax(0, 580px);
+}
+.hero-copy { max-width: 580px; }
+.hero .kicker {
+  font-size: 10px;
+  margin: 0 0 11px;
+  letter-spacing: .15em;
+}
+.hero h1 {
+  max-width: 580px;
+  font-size: clamp(37px, 4vw, 60px);
+  line-height: 1.055;
+  margin: 0 0 16px;
+  letter-spacing: -.045em;
+}
+.hero p.lead {
+  max-width: 515px;
+  font-size: 15px;
+  line-height: 1.58;
+  margin: 0;
+}
+.hero .tool-badges { margin-top: 19px; gap: 8px; }
+.hero .tool-badge { padding: 6px 11px; font-size: 10px; }
+.hero .actions { margin-top: 19px; gap: 10px; }
+.hero .actions .btn {
+  min-height: 44px;
+  padding: 10px 17px;
+  font-size: 12px;
+}
+.hero .byline { margin-top: 18px; font-size: 11px; }
+
+@media (max-width: 1000px) {
+  .hero-inner {
+    min-height: 0;
+    height: min(580px, calc(100svh - 85px));
+    grid-template-columns: minmax(0, 540px);
+    padding: 28px 0;
+  }
+  .hero-copy { max-width: 540px; }
+  .hero h1 { font-size: clamp(36px, 4.65vw, 53px); }
+}
+@media (max-width: 680px) {
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 0;
+    height: min(520px, calc(100svh - 73px));
+    padding: 24px 0;
+  }
+  .hero-copy { max-width: 100%; }
+  .hero .kicker { font-size: 9px; margin-bottom: 9px; }
+  .hero h1 {
+    font-size: clamp(30px, 8vw, 43px);
+    line-height: 1.055;
+    margin-bottom: 13px;
+    letter-spacing: -.042em;
+  }
+  .hero p.lead { font-size: 13px; line-height: 1.52; }
+  .hero .tool-badges { margin-top: 15px; gap: 7px; }
+  .hero .tool-badge { padding: 5px 9px; font-size: 10px; }
+  .hero .actions { margin-top: 16px; gap: 9px; }
+  .hero .actions .btn { min-height: 40px; padding: 9px 12px; font-size: 11px; }
+  .hero .byline { margin-top: 14px; font-size: 10px; }
+}
+@media (max-width: 390px) {
+  .hero h1 { font-size: clamp(29px, 7.8vw, 32px); }
+  .hero-inner { padding: 17px 0; }
+  .hero .actions .btn { font-size: 10px; padding: 8px 10px; }
+}
+@media (max-height: 580px) and (min-width: 681px) {
+  .hero-inner { height: calc(100svh - 85px); padding: 12px 0; }
+  .hero h1 { font-size: clamp(30px, 3.7vw, 45px); margin-bottom: 9px; }
+  .hero .kicker { margin-bottom: 7px; }
+  .hero .tool-badges { margin-top: 10px; }
+  .hero .actions { margin-top: 11px; }
+  .hero .byline { margin-top: 10px; }
+}
+
 </style>
   </head>
   <body>
