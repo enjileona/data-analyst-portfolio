@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Studi kasus analisis pelatihan PT. X 2025 oleh Euanggay Leona Enji.">
+    <title>Transformasi Digital &amp; Dinamika Pelatihan | Euanggay Leona Enji</title>
+    <style>
+
+:root{--navy:#0c284b;--blue:#146ef5;--cyan:#39bdf8;--ink:#23394f;--muted:#65788f;--line:#dfe7f1;--soft:#f5f8fc;--radius:12px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:142px}
+body{margin:0;background:white;color:var(--ink);font:15px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+svg{width:24px;height:24px;flex-shrink:0}
+button,a,input{touch-action:manipulation}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+.container{width:min(1160px,calc(100% - 80px));margin:auto}
+.header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
+.nav{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font-size:11px;line-height:1.5;letter-spacing:.11em;font-weight:800;color:var(--navy)}
+.nav-right{display:flex;align-items:center;gap:27px}
+.nav-right>a{font-size:12px;font-weight:600}
+.nav-right>a:hover{color:var(--blue)}
+.lang{display:flex;gap:3px;background:#f0f4f9;border:1px solid var(--line);padding:4px;border-radius:7px}
+.lang button{background:transparent;border:0;border-radius:4px;font-size:11px;font-weight:750;color:var(--muted);padding:6px 11px;min-height:32px}
+.lang button[aria-pressed=true]{background:var(--navy);color:white}
+.hero{background:radial-gradient(ellipse at 100% 80%,#104a87 0,#0d3159 45%,#081f3a 100%);color:#fff;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 68%,#39bdf811 68.1%,transparent 68.3%),linear-gradient(120deg,transparent 80%,#39bdf821 80.1%,transparent 80.3%);pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1.6fr .6fr;align-items:center;gap:30px;min-height:540px;padding:75px 0 66px;position:relative}
+.kicker{font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:750;margin:0 0 17px;color:var(--blue)}
+.hero .kicker{color:#b2defb}
+.hero h1{font-size:clamp(40px,4.35vw,63px);line-height:1.12;font-weight:750;letter-spacing:-.04em;margin:0 0 23px}
+.accent{color:#49caff}
+.hero p.lead{font-size:17px;line-height:1.8;color:#d4e2f2;max-width:535px;margin:0}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:11px 19px;border-radius:7px;border:1px solid var(--line);font-size:12px;font-weight:650;background:#fff;color:var(--navy);transition:background .15s,transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn.primary:hover{background:#075fdd}
+.btn.ghost{background:#ffffff06;color:white;border-color:#ffffff55}
+.byline{margin:35px 0 0;color:#b5d6ef;font-size:12px}
+.section-nav{background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);position:sticky;top:80px;z-index:20;backdrop-filter:blur(12px)}
+.section-nav .container{display:flex;gap:34px;overflow-x:auto}
+.section-nav a{font-size:12px;color:var(--muted);font-weight:600;padding:18px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.section-nav a:hover,.section-nav a.active{color:var(--blue);border-color:var(--blue)}
+.content{padding:72px 0;border-bottom:1px solid var(--line)}
+.soft{background:var(--soft)}
+.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:38px;margin-bottom:30px}
+.section-head h2{margin:0;font-size:clamp(28px,3vw,39px);line-height:1.2;letter-spacing:-.035em;color:var(--navy);font-weight:700}
+.section-head p:not(.kicker){max-width:365px;color:var(--muted);font-size:13px;margin:0}
+.overview{display:grid;grid-template-columns:1.2fr .8fr;gap:55px}
+.overview p{font-size:15px;margin:0 0 18px;color:var(--muted)}
+.question{padding:18px 22px;border-left:3px solid var(--blue);background:#eef5ff;border-radius:0 8px 8px 0;color:var(--navy);font-size:16px;font-weight:600}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.meta-item{padding:18px;border:1px solid var(--line);border-radius:10px}
+.meta-item small{font-size:10px;display:block;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
+.meta-item strong{font-size:13px;color:var(--navy);font-weight:650}
+.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.metric{padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.metric svg{color:var(--blue);width:26px;height:26px;margin-bottom:18px}
+.metric b{display:block;font-size:34px;letter-spacing:-.035em;line-height:1.1;font-weight:750;color:var(--navy)}
+.metric .label{display:block;font-size:13px;color:var(--muted);margin-top:9px}
+.metric .delta{display:block;font-size:11px;color:#956052;margin-top:14px}
+.note{font-size:11px;color:var(--muted);line-height:1.75;margin:18px 0 0}
+.key-note{margin-top:23px;padding:18px 22px;background:#eef5ff;border:1px solid #dceafb;border-radius:9px;color:var(--navy);font-size:13px}
+.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.analysis-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.analysis-card:last-child{grid-column:1/-1}
+.card-head{padding:23px 25px 17px;display:flex;align-items:center;gap:12px}
+.card-head svg{color:var(--blue);width:22px;height:22px}
+.card-head h3{margin:0;color:var(--navy);font-size:17px;line-height:1.4;letter-spacing:-.02em}
+.visual{margin:0 25px 0;min-height:215px;border:1px dashed #cddae8;border-radius:8px;position:relative;overflow:hidden;background:linear-gradient(145deg,#fafcff,#f0f5fb);display:flex;align-items:center;justify-content:center}
+.visual img{width:100%;height:auto;display:block;background:white;cursor:zoom-in}
+.visual.has-image{min-height:0;border:1px solid var(--line);background:#fff}
+.empty{text-align:center;padding:30px 22px;color:#788ea7}
+.empty svg{width:36px;height:36px;stroke-width:1.1;margin-bottom:8px;color:#91aac4}
+.empty strong{display:block;font-size:12px;font-weight:500}
+.empty small{display:block;font-size:10px;margin-top:5px;color:#91a2b6}
+.card-copy{padding:20px 25px 25px;flex:1}
+.card-copy p{font-size:13px;color:var(--muted);margin:0;line-height:1.9}
+.card-copy strong{font-weight:650;color:var(--navy)}
+.detail-line{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+.detail-line span.pill{display:inline-block;background:#f0f5fc;color:#466785;font-size:10px;padding:4px 9px;border-radius:5px}
+.analysis-card:last-child .visual{min-height:220px}
+.analysis-card:last-child .visual.has-image{min-height:0}
+.insights{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.insight{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:white}
+.insight .number{display:block;color:var(--blue);font-size:11px;font-weight:750;letter-spacing:.08em;margin-bottom:17px}
+.insight h3{color:var(--navy);font-size:17px;line-height:1.35;margin:0 0 12px}
+.insight p{color:var(--muted);font-size:12px;line-height:1.85;margin:0}
+.insight .recommendation{border-top:1px solid var(--line);margin-top:18px;padding-top:15px;font-size:12px;color:var(--navy)}
+.cta{background:radial-gradient(ellipse at right top,#195185,#0c284b 70%);padding:33px 38px;border-radius:13px;display:flex;justify-content:space-between;align-items:center;gap:25px;color:white;margin-top:40px}
+.cta h2{font-size:25px;letter-spacing:-.025em;line-height:1.3;margin:0 0 8px}
+.cta p{font-size:13px;color:#c4d9ec;margin:0}
+.cta .btn{flex-shrink:0}
+.footer{padding:27px 0;color:var(--muted);font-size:11px}
+.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.dialog{border:0;border-radius:12px;padding:46px 20px 20px;background:#fff;max-width:95vw;max-height:95vh;width:1100px;color:var(--navy)}
+.dialog::backdrop{background:#071d38cb}
+.dialog img{display:block;max-width:100%;max-height:calc(90vh - 65px);margin:auto;object-fit:contain}
+.dialog .close{position:absolute;right:12px;top:9px;border:0;background:#eef4fb;border-radius:5px;width:32px;height:32px;font-size:21px;color:var(--navy)}
+[hidden]{display:none!important}
+
+@media(min-width:1500px){.hero-inner{min-height:580px}
+}
+@media(max-width:1000px){.container{width:calc(100% - 48px)}
+.hero-inner{grid-template-columns:1fr .45fr;min-height:500px}
+.metrics{gap:12px}
+.metric{padding:21px}
+.metric b{font-size:30px}
+.overview{gap:30px}
+.insights{grid-template-columns:1fr 1fr}
+.section-head{gap:24px}
+.section-head p:not(.kicker){max-width:290px}
+}
+
+@media(max-width:680px){html{scroll-padding-top:130px}
+.container{width:calc(100% - 36px)}
+.nav{min-height:72px;gap:12px}
+.nav-right{gap:12px}
+.nav-right>a{font-size:10px}
+.brand{font-size:9px}
+.lang{padding:3px}
+.lang button{padding:4px 8px;min-height:30px}
+.hero-inner{display:block;min-height:0;padding:57px 0 45px}
+.hero h1{font-size:clamp(35px,8.2vw,50px)}
+.hero p.lead{font-size:15px}
+.hero-copy{position:relative;z-index:1}
+.byline{font-size:11px;margin-top:32px}
+.section-nav{top:72px}
+.section-nav .container{gap:24px}
+.section-nav a{font-size:11px;padding:16px 0}
+.content{padding:49px 0}
+.section-head{display:block;margin-bottom:26px}
+.section-head p:not(.kicker){margin-top:17px;max-width:none}
+.overview{grid-template-columns:1fr;gap:24px}
+.metrics{grid-template-columns:1fr 1fr;gap:12px}
+.metric{padding:20px}
+.metric b{font-size:30px}
+.metric svg{margin-bottom:14px}
+.metric .delta{font-size:10px}
+.analysis-grid{grid-template-columns:1fr;gap:18px}
+.analysis-card:last-child{grid-column:auto}
+.card-head{padding:22px 20px 15px}
+.visual{margin:0 20px;min-height:190px}
+.card-copy{padding:18px 20px 23px}
+.insights{grid-template-columns:1fr 1fr;gap:12px}
+.insight{padding:20px}
+.insight h3{font-size:16px}
+.cta{display:block;padding:28px}
+.cta .btn{margin-top:22px}
+.footer-row{align-items:flex-start}
+}
+
+@media(max-width:390px){.nav-right{gap:8px}
+.nav-right>a{font-size:9px}
+.hero h1{font-size:33px}
+.insights{grid-template-columns:1fr}
+.metric b{font-size:27px}
+.metric{padding:17px}
+.actions .btn{font-size:11px;padding:10px 14px}
+.section-nav .container{gap:18px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+*{transition:none!important}
+}
+
+
+/* HERO TOOLS + DASHBOARD BACKGROUND */
+.back-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:8px;color:var(--navy)}
+.back-icon:hover{background:var(--soft)}
+.back-icon svg{width:22px;height:22px}
+.tool-badges{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0 0}
+.tool-badge{display:inline-flex;align-items:center;gap:7px;border:1px solid #ffffff30;border-radius:100px;padding:6px 12px;background:#ffffff07;color:#d9ebfb;font-size:11px;font-weight:550}
+.tool-badge svg{width:16px;height:16px;color:#77ceff}
+.live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#39bdf8;flex-shrink:0}
+
+/* ===============================================================
+   HERO IMAGE + GRADASI NAVY KIRI -> KANAN
+   UNTUK MENGGANTI FOTO, CARI [GANTI GAMBAR HERO DI SINI] DI HTML.
+   =============================================================== */
+.hero{background:#0c284b;isolation:isolate}
+.hero-background-image{position:absolute;inset:0;z-index:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 18%;display:block}
+.hero-background-image[hidden]{display:none!important}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(7,26,52,.99) 0%,rgba(8,31,60,.97) 28%,rgba(12,43,78,.81) 47%,rgba(12,52,95,.46) 70%,rgba(12,57,105,.19) 100%);mask-image:none}
+.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,720px);gap:0;align-items:center;min-height:565px;padding:82px 0 76px}
+.hero-copy{position:relative;z-index:2;max-width:700px}
+.hero h1{font-size:clamp(38px,4.45vw,65px);max-width:720px;text-shadow:0 3px 20px rgba(5,18,38,.18)}
+.hero p.lead{max-width:540px;text-shadow:0 2px 12px rgba(5,18,38,.2)}
+
+@media(max-width:1000px){
+  .hero-inner{grid-template-columns:minmax(0,690px);min-height:520px;padding:70px 0}
+  .hero::before{background:linear-gradient(90deg,rgba(7,26,52,.98) 0%,rgba(8,31,60,.94) 39%,rgba(12,43,78,.70) 70%,rgba(12,57,105,.30) 100%)}
+}
+@media(max-width:680px){
+  .hero-inner{display:block;min-height:520px;padding:60px 0}
+  .hero h1{font-size:clamp(34px,8.2vw,50px)}
+  .hero-background-image{object-position:55% center}
+  .hero::before{background:linear-gradient(90deg,rgba(7,26,52,.96) 0%,rgba(8,31,60,.90) 61%,rgba(12,43,78,.74) 100%)}
+  .back-icon{width:34px;height:34px}
+}
+
+</style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a class="brand" href="../index.html" aria-label="Euanggay Leona Enji">EUANGGAY<br>ENJI</a>
+        <div class="nav-right">
+          <a href="../index.html#work" class="back-icon" aria-label="Kembali ke semua proyek" title="Kembali ke semua proyek">
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5m6-6-6 6 6 6"></path>
+            </svg>
+          </a>
+          <a href="../index.html#contact">
+            <span data-i18n="contact">Kontak</span>
+          </a>
+          <div class="lang" role="group" aria-label="Bahasa / Language">
+            <button type="button" data-lang="id" aria-pressed="true">ID</button>
+            <button type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <!-- ================================================================
+             [GANTI GAMBAR HERO DI SINI]
+             1. Unggah screenshot dashboard Anda ke folder GitHub.
+             2. GANTI NILAI src di bawah (bukan CSS) dengan alamat foto.
+                Contoh: ../assets/images/training/nama-foto-dashboard.png
+             3. File HTML ini berada di folder /projects (gunakan ../assets/...).
+             4. Foto mengisi seluruh hero; gradasi navy otomatis aktif.
+             5. Bila gambar belum ada, hero tetap berwarna navy.
+             ================================================================ -->
+        <img
+          class="hero-background-image"
+          id="hero-background-image"
+          src="../assets/images/training/dashboard-preview.png"
+          alt=""
+          aria-hidden="true"
+        >
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="kicker"><span data-i18n="heroKicker">STUDI KASUS / PEOPLE ANALYTICS</span></p>
+            <h1><span data-i18n="title">Transformasi Digital<br>&amp; Dinamika Pelatihan<br>PT. X — <span class="accent">2025</span></span></h1>
+            <p class="lead"><span data-i18n="lead">Analisis kinerja pelatihan untuk mendukung perencanaan strategis SDM.</span></p>
+            <div class="tool-badges" aria-label="Tools">
+              <span class="tool-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M8 8h8v9H8zM8 11h8M12 8v9"></path></svg>Google Sheets</span>
+              <span class="tool-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M8 22h8M12 18v4M7 14v-3M12 14V8M17 14v-5"></path></svg>Looker Studio</span>
+            </div>
+            <div class="actions">
+              <a class="btn primary" href="#analysis"><span data-i18n="seeAnalysis">Lihat Analisis ↓</span></a>
+              <a class="btn ghost dashboard-action" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="summary">Lihat Dashboard ↗</span></a>
+            </div>
+            <p class="byline">Euanggay Leona Enji · Data Analyst</p>
+          </div>
+        </div>
+      </section>
+            <nav class="section-nav" aria-label="Bagian proyek">
+        <div class="container">
+          <a href="#kpi">
+            <span data-i18n="navkpi">KPI Utama</span>
+          </a>
+          <a href="#analysis">
+            <span data-i18n="navanalysis">Analisis</span>
+          </a>
+          <a href="#recommendations">
+            <span data-i18n="navrecommendations">Rekomendasi</span>
+          </a>
+        </div>
+      </nav>
+      <section class="content" id="kpi">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="kicker">
+                <span data-i18n="kpiK">01 / RINGKASAN KINERJA</span>
+              </p>
+              <h2>
+                <span data-i18n="kpiTitle">Pelatihan 2025 dalam angka.</span>
+              </h2>
+            </div>
+            <p>
+              <span data-i18n="kpiSub">Empat indikator utama untuk membaca skala pelaksanaan dan investasi pelatihan.</span>
+            </p>
+          </div>
+          <div class="metrics">
+            <article class="metric">
+              <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 3h7l4 4v14H7z"></path>
+                <path d="M14 3v5h4M10 12h5M10 16h5"></path>
+              </svg>
+              <b>
+                <span data-i18n="kv0">262</span>
+              </b>
+              <span class="label">
+                <span data-i18n="kl0">Pelatihan</span>
+              </span>
+              <span class="delta">
+                <span data-i18n="kd0">↓ 0,4% dibanding tahun lalu</span>
+              </span>
+            </article>
+            <article class="metric">
+              <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3"></circle>
+                <path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 3 4v2"></path>
+              </svg>
+              <b>
+                <span data-i18n="kv1">3.461</span>
+              </b>
+              <span class="label">
+                <span data-i18n="kl1">Peserta</span>
+              </span>
+              <span class="delta">
+                <span data-i18n="kd1">↓ 18% dibanding tahun lalu</span>
+              </span>
+            </article>
+            <article class="metric">
+              <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+              <b>
+                <span data-i18n="kv2">58.078</span>
+              </b>
+              <span class="label">
+                <span data-i18n="kl2">Jam Pelatihan</span>
+              </span>
+              <span class="delta">
+                <span data-i18n="kd2">↓ 18% dibanding tahun lalu</span>
+              </span>
+            </article>
+            <article class="metric">
+              <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                <path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"></path>
+              </svg>
+              <b>
+                <span data-i18n="kv3">Rp29 M</span>
+              </b>
+              <span class="label">
+                <span data-i18n="kl3">Total Biaya</span>
+              </span>
+              <span class="delta">
+                <span data-i18n="kd3">↓ 18% dibanding tahun lalu</span>
+              </span>
+            </article>
+          </div>
+          <div class="key-note">
+            <span data-i18n="keyNote"><strong>Pola utama:</strong> Jumlah pelatihan relatif stabil, sementara partisipasi, total jam, dan biaya turun. Penyebab perubahan perlu ditelaah bersama konteks program.</span>
+          </div>
+          <p class="note">
+            <span data-i18n="kpiNote">Angka dan perubahan tahunan mengikuti ringkasan KPI pada presentasi. M = miliar rupiah.</span>
+          </p>
+        </div>
+      </section>
+            <section class="content soft" id="analysis">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="kicker">
+                <span data-i18n="anK">02 / ANALISIS</span>
+              </p>
+              <h2>
+                <span data-i18n="anTitle">Dari data, menuju pemahaman.</span>
+              </h2>
+            </div>
+            <p>
+              <span data-i18n="anSub">Lima sudut pandang untuk menelaah dinamika pelatihan dan investasi pembelajaran.</span>
+            </p>
+          </div>
+          <div class="analysis-grid">
+            <article class="analysis-card">
+              <div class="card-head">
+                <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M11 3a9 9 0 1 0 10 10H11zM14 3v7h7a8 8 0 0 0-7-7z"></path>
+                </svg>
+                <h3>
+                  <span data-i18n="card_budget">Anggaran &amp; Realisasi</span>
+                </h3>
+              </div>
+              <div class="visual" data-visual="budget">
+                <!-- GAMBAR BUDGET: ganti atribut src pada <img> di bawah sesuai nama/path gambar di GitHub. -->
+                <img data-image="budget" alt="Anggaran &amp; Realisasi" hidden src="../assets/images/training/budget.png">
+                <div class="empty">
+                  <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                    <circle cx="8" cy="8" r="1"></circle>
+                    <path d="m3 17 6-6 4 4 3-3 5 5"></path>
+                  </svg>
+                  <strong>
+                    <span data-i18n="empty_budget">Visualisasi anggaran &amp; realisasi</span>
+                  </strong>
+                  </div>
+              </div>
+              <div class="card-copy">
+                <div class="detail-line">
+                  <span class="pill">
+                    <span data-i18n="pill_budget0">83,3% realisasi</span>
+                  </span>
+                  <span class="pill">
+                    <span data-i18n="pill_budget1">16,7% sisa</span>
+                  </span>
+                </div>
+                <p>
+                  <span data-i18n="copy_budget">Presentasi mencatat realisasi sebesar <strong>83,3%</strong>. Biaya 2025 ditampilkan sekitar <strong>Rp29 miliar</strong> dengan anggaran sekitar <strong>Rp35 miliar</strong>; pada 2024, realisasi sempat melampaui anggaran.</span>
+                </p>
+              </div>
+            </article>
+            <article class="analysis-card">
+              <div class="card-head">
+                <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="8" r="3"></circle>
+                  <path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 3 4v2"></path>
+                </svg>
+                <h3>
+                  <span data-i18n="card_distribution">Distribusi Peserta</span>
+                </h3>
+              </div>
+              <div class="visual" data-visual="distribution">
+                <!-- GAMBAR DISTRIBUTION: ganti atribut src pada <img> di bawah sesuai nama/path gambar di GitHub. -->
+                <img data-image="distribution" alt="Distribusi Peserta" hidden src="../assets/images/training/distribution.png">
+                <div class="empty">
+                  <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                    <circle cx="8" cy="8" r="1"></circle>
+                    <path d="m3 17 6-6 4 4 3-3 5 5"></path>
+                  </svg>
+                  <strong>
+                    <span data-i18n="empty_distribution">Visualisasi distribusi peserta</span>
+                  </strong>
+                  </div>
+              </div>
+              <div class="card-copy">
+                <div class="detail-line">
+                  <span class="pill">
+                    <span data-i18n="pill_distribution0">Unit kerja</span>
+                  </span>
+                  <span class="pill">
+                    <span data-i18n="pill_distribution1">Jabatan</span>
+                  </span>
+                </div>
+                <p>
+                  <span data-i18n="copy_distribution">Pemasaran, Operasional, dan Keuangan menempati tiga unit teratas. Pada kategori jabatan, <strong>Manager, Senior Staff, dan Senior Manager</strong> berada di tiga posisi teratas. Distribusi ini dapat menjadi titik awal penelaahan akses pembelajaran antarsegmen.</span>
+                </p>
+              </div>
+            </article>
+            <article class="analysis-card">
+              <div class="card-head">
+                <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 3h7l4 4v14H7z"></path>
+                  <path d="M14 3v5h4M10 12h5M10 16h5"></path>
+                </svg>
+                <h3>
+                  <span data-i18n="card_format">In-House vs Public Training</span>
+                </h3>
+              </div>
+              <div class="visual" data-visual="format">
+                <!-- GAMBAR FORMAT: ganti atribut src pada <img> di bawah sesuai nama/path gambar di GitHub. -->
+                <img data-image="format" alt="In-House vs Public Training" hidden src="../assets/images/training/format.png">
+                <div class="empty">
+                  <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                    <circle cx="8" cy="8" r="1"></circle>
+                    <path d="m3 17 6-6 4 4 3-3 5 5"></path>
+                  </svg>
+                  <strong>
+                    <span data-i18n="empty_format">Visualisasi in-house vs public training</span>
+                  </strong>
+                  </div>
+              </div>
+              <div class="card-copy">
+                <div class="detail-line">
+                  <span class="pill">
+                    <span data-i18n="pill_format0">In-House: 227</span>
+                  </span>
+                  <span class="pill">
+                    <span data-i18n="pill_format1">Public: 215</span>
+                  </span>
+                </div>
+                <p>
+                  <span data-i18n="copy_format">Grafik jenis pelatihan menampilkan <strong>227</strong> untuk In-House dan <strong>215</strong> untuk Public. Keduanya menunjukkan komposisi yang berdekatan. Efisiensi biaya dan kesesuaian kurikulum perlu dinilai dengan data pendukung.</span>
+                </p>
+              </div>
+            </article>
+            <article class="analysis-card">
+              <div class="card-head">
+                <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 3v18h18M6 16l5-6 4 3 6-8"></path>
+                </svg>
+                <h3>
+                  <span data-i18n="card_trends">Tren Pelatihan 2020–2025</span>
+                </h3>
+              </div>
+              <div class="visual" data-visual="trends">
+                <!-- GAMBAR TRENDS: ganti atribut src pada <img> di bawah sesuai nama/path gambar di GitHub. -->
+                <img data-image="trends" alt="Tren Pelatihan 2020–2025" hidden src="../assets/images/training/trends.png">
+                <div class="empty">
+                  <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                    <circle cx="8" cy="8" r="1"></circle>
+                    <path d="m3 17 6-6 4 4 3-3 5 5"></path>
+                  </svg>
+                  <strong>
+                    <span data-i18n="empty_trends">Visualisasi tren pelatihan 2020–2025</span>
+                  </strong>
+                  </div>
+              </div>
+              <div class="card-copy">
+                <div class="detail-line">
+                  <span class="pill">
+                    <span data-i18n="pill_trends0">Puncak jam: 2024</span>
+                  </span>
+                  <span class="pill">
+                    <span data-i18n="pill_trends1">Koreksi: 2025</span>
+                  </span>
+                </div>
+                <p>
+                  <span data-i18n="copy_trends">Total jam pelatihan mencapai <strong>70.468 jam</strong> pada 2024 dan turun menjadi <strong>58.078 jam</strong> pada 2025. Jumlah program relatif stabil; perubahan partisipasi perlu ditelaah bersama ukuran kelas dan cakupan program.</span>
+                </p>
+              </div>
+            </article>
+            <article class="analysis-card">
+              <div class="card-head">
+                <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+                <h3>
+                  <span data-i18n="card_individual">Investasi Pembelajaran per Individu</span>
+                </h3>
+              </div>
+              <div class="visual" data-visual="individual">
+                <!-- GAMBAR INDIVIDUAL: ganti atribut src pada <img> di bawah sesuai nama/path gambar di GitHub. -->
+                <img data-image="individual" alt="Investasi Pembelajaran per Individu" hidden src="../assets/images/training/individual.png">
+                <div class="empty">
+                  <svg viewbox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                    <circle cx="8" cy="8" r="1"></circle>
+                    <path d="m3 17 6-6 4 4 3-3 5 5"></path>
+                  </svg>
+                  <strong>
+                    <span data-i18n="empty_individual">Visualisasi investasi pembelajaran per individu</span>
+                  </strong>
+                  </div>
+              </div>
+              <div class="card-copy">
+                <div class="detail-line">
+                  <span class="pill">
+                    <span data-i18n="pill_individual0">16,78 jam / karyawan</span>
+                  </span>
+                  <span class="pill">
+                    <span data-i18n="pill_individual1">Rp8,4 juta / karyawan</span>
+                  </span>
+                </div>
+                <p>
+                  <span data-i18n="copy_individual">Presentasi mencatat rata-rata <strong>16,78 jam</strong> dan biaya sekitar <strong>Rp8,4 juta per karyawan</strong> pada 2025. Indikator ini menggambarkan intensitas dan investasi; kualitas pembelajaran perlu dinilai melalui evaluasi hasil belajar dan penerapan di tempat kerja.</span>
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="note">
+            <span data-i18n="dataNote">Catatan sumber: persentase anggaran mengikuti presentasi dan nilai rupiah ditampilkan dalam pembulatan. Angka pada grafik jenis pelatihan memiliki cakupan agregasi yang belum dijelaskan pada materi, sehingga tidak dijumlahkan dengan KPI peserta.</span>
+          </p>
+        </div>
+      </section>
+      <section class="content" id="recommendations">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="kicker">
+                <span data-i18n="recK">03 / INSIGHT &amp; REKOMENDASI</span>
+              </p>
+              <h2>
+                <span data-i18n="recTitle">Temuan yang mendorong tindakan.</span>
+              </h2>
+            </div>
+            <p>
+              <span data-i18n="recSub">Arah tindak lanjut untuk memperdalam analisis dan mendukung prioritas pengembangan.</span>
+            </p>
+          </div>
+          <div class="insights">
+            <article class="insight">
+              <span class="number">01</span>
+              <h3>
+                <span data-i18n="rt0">Dinamika Partisipasi</span>
+              </h3>
+              <p>
+                <span data-i18n="rp0">Volume program relatif stabil, sementara peserta dan jam pelatihan menurun.</span>
+              </p>
+              <div class="recommendation">
+                <span data-i18n="rr0">Telaah ukuran kelas, kriteria peserta, dan perubahan kebutuhan program.</span>
+              </div>
+            </article>
+            <article class="insight">
+              <span class="number">02</span>
+              <h3>
+                <span data-i18n="rt1">Fokus Pengembangan</span>
+              </h3>
+              <p>
+                <span data-i18n="rp1">Distribusi partisipasi memperlihatkan konsentrasi pada unit inti dan beberapa level jabatan.</span>
+              </p>
+              <div class="recommendation">
+                <span data-i18n="rr1">Bandingkan distribusi peserta dengan kebutuhan kompetensi tiap segmen.</span>
+              </div>
+            </article>
+            <article class="insight">
+              <span class="number">03</span>
+              <h3>
+                <span data-i18n="rt2">Investasi per Individu</span>
+              </h3>
+              <p>
+                <span data-i18n="rp2">Rata-rata jam dan biaya membantu membaca intensitas investasi pembelajaran.</span>
+              </p>
+              <div class="recommendation">
+                <span data-i18n="rr2">Lengkapi dengan evaluasi hasil belajar serta penerapan di tempat kerja.</span>
+              </div>
+            </article>
+            <article class="insight">
+              <span class="number">04</span>
+              <h3>
+                <span data-i18n="rt3">Kompetensi Digital</span>
+              </h3>
+              <p>
+                <span data-i18n="rp3">Materi mencatat 30 peserta pada pengembangan kompetensi digital.</span>
+              </p>
+              <div class="recommendation">
+                <span data-i18n="rr3">Petakan kebutuhan digital dan prioritas program berdasarkan kesenjangan kompetensi.</span>
+              </div>
+            </article>
+          </div>
+          <div class="cta">
+            <div>
+              <h2>
+                <span data-i18n="ctaTitle">Jelajahi detail analisis.</span>
+              </h2>
+              <p>
+                <span data-i18n="ctaSub">Baca visualisasi dan konteks di balik setiap indikator.</span>
+              </p>
+            </div>
+            <a id="dashboard-link" class="btn primary dashboard-action" href="#" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="ctaButton">Lihat Live Dashboard ↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-row">
+        <span>© <span id="year">2026</span> Euanggay Leona Enji · Data Analyst Portfolio</span>
+        <a href="../index.html#work">
+          <span data-i18n="back">← Kembali ke portofolio</span>
+        </a>
+      </div>
+    </footer>
+    <dialog class="dialog" id="image-dialog">
+      <button type="button" class="close" aria-label="Tutup / Close">×</button>
+      <img id="expanded-image" alt="">
+    </dialog>
+    <script>
+
+'use strict';
+/* ================================================================
+   KONFIGURASI WEBSITE — EDIT BAGIAN INI
+   1. portfolioHome: lokasi halaman utama portofolio Anda.
+   2. [GANTI LINK LOOKER STUDIO DI SINI]: isi dashboardUrl agar
+      tombol hero "Lihat Dashboard" langsung membuka Looker Studio.
+   3. [GANTI GAMBAR HERO DI SINI]: ubah src pada <img id="hero-background-image">
+      menjadi path foto dashboard yang sudah Anda upload ke GitHub.
+   4. GAMBAR ANALISIS: ubah src pada masing-masing <img data-image>.
+      Gambar hero dan tautan Looker Studio dapat diperbarui terpisah.
+   ================================================================ */
+const PROJECT_CONFIG = {
+  portfolioHome: '../index.html',
+  dashboardUrl: ''        // [GANTI LINK LOOKER STUDIO DI SINI] Contoh: 'https://lookerstudio.google.com/reporting/ID-LAPORAN'
+};
+const I18N = {
+  "all": {
+    "id": "Semua Proyek",
+    "en": "All Projects"
+  },
+  "contact": {
+    "id": "Kontak",
+    "en": "Contact"
+  },
+  "heroKicker": {
+    "id": "STUDI KASUS / PEOPLE ANALYTICS",
+    "en": "CASE STUDY / PEOPLE ANALYTICS"
+  },
+  "title": {
+    "id": "Transformasi Digital<br>& Dinamika Pelatihan<br>PT. X — <span class=\"accent\">2025</span>",
+    "en": "Digital Transformation<br>& Training Dynamics<br>PT. X — <span class=\"accent\">2025</span>"
+  },
+  "lead": {
+    "id": "Analisis kinerja pelatihan untuk mendukung perencanaan strategis SDM.",
+    "en": "Training performance analysis to support strategic HR planning."
+  },
+  "seeAnalysis": {
+    "id": "Lihat Analisis ↓",
+    "en": "View Analysis ↓"
+  },
+  "summary": {
+    "id": "Lihat Dashboard",
+    "en": "View Dashboard"
+  },
+  "navkpi": {
+    "id": "KPI Utama",
+    "en": "Key Metrics"
+  },
+  "navanalysis": {
+    "id": "Analisis",
+    "en": "Analysis"
+  },
+  "navrecommendations": {
+    "id": "Rekomendasi",
+    "en": "Recommendations"
+  },
+  "kpiK": {
+    "id": "01 / RINGKASAN KINERJA",
+    "en": "01 / PERFORMANCE SNAPSHOT"
+  },
+  "kpiTitle": {
+    "id": "Pelatihan 2025 dalam angka.",
+    "en": "Training in 2025, at a glance."
+  },
+  "kpiSub": {
+    "id": "Empat indikator utama untuk membaca skala pelaksanaan dan investasi pelatihan.",
+    "en": "Four key indicators of training delivery and investment."
+  },
+  "kv0": {
+    "id": "262",
+    "en": "262"
+  },
+  "kl0": {
+    "id": "Pelatihan",
+    "en": "Training Programs"
+  },
+  "kd0": {
+    "id": "↓ 0,4% dibanding tahun lalu",
+    "en": "↓ 0.4% vs. previous year"
+  },
+  "kv1": {
+    "id": "3.461",
+    "en": "3,461"
+  },
+  "kl1": {
+    "id": "Peserta",
+    "en": "Participants"
+  },
+  "kd1": {
+    "id": "↓ 18% dibanding tahun lalu",
+    "en": "↓ 18% vs. previous year"
+  },
+  "kv2": {
+    "id": "58.078",
+    "en": "58,078"
+  },
+  "kl2": {
+    "id": "Jam Pelatihan",
+    "en": "Training Hours"
+  },
+  "kd2": {
+    "id": "↓ 18% dibanding tahun lalu",
+    "en": "↓ 18% vs. previous year"
+  },
+  "kv3": {
+    "id": "Rp29 M",
+    "en": "IDR29 B"
+  },
+  "kl3": {
+    "id": "Total Biaya",
+    "en": "Total Cost"
+  },
+  "kd3": {
+    "id": "↓ 18% dibanding tahun lalu",
+    "en": "↓ 18% vs. previous year"
+  },
+  "keyNote": {
+    "id": "<strong>Pola utama:</strong> Jumlah pelatihan relatif stabil, sementara partisipasi, total jam, dan biaya turun. Penyebab perubahan perlu ditelaah bersama konteks program.",
+    "en": "<strong>Key pattern:</strong> Training volume remained broadly stable, while participation, total hours, and cost declined. The causes require examination alongside program context."
+  },
+  "kpiNote": {
+    "id": "Angka dan perubahan tahunan mengikuti ringkasan KPI pada presentasi. M = miliar rupiah.",
+    "en": "Figures and year-on-year changes follow the presentation’s KPI summary. B = billion rupiah."
+  },
+  "anK": {
+    "id": "02 / ANALISIS",
+    "en": "02 / ANALYSIS"
+  },
+  "anTitle": {
+    "id": "Dari data, menuju pemahaman.",
+    "en": "From data to understanding."
+  },
+  "anSub": {
+    "id": "Lima sudut pandang untuk menelaah dinamika pelatihan dan investasi pembelajaran.",
+    "en": "Five perspectives on training dynamics and learning investment."
+  },
+  "card_budget": {
+    "id": "Anggaran & Realisasi",
+    "en": "Budget & Realization"
+  },
+  "empty_budget": {
+    "id": "Visualisasi anggaran & realisasi",
+    "en": "Anggaran & Realisasi visualization"
+  },
+  "pill_budget0": {
+    "id": "83,3% realisasi",
+    "en": "83.3% realized"
+  },
+  "pill_budget1": {
+    "id": "16,7% sisa",
+    "en": "16.7% remaining"
+  },
+  "copy_budget": {
+    "id": "Presentasi mencatat realisasi sebesar <strong>83,3%</strong>. Biaya 2025 ditampilkan sekitar <strong>Rp29 miliar</strong> dengan anggaran sekitar <strong>Rp35 miliar</strong>; pada 2024, realisasi sempat melampaui anggaran.",
+    "en": "The presentation reports <strong>83.3%</strong> budget realization. 2025 cost is shown at approximately <strong>IDR29 billion</strong> against an approximately <strong>IDR35 billion</strong> budget; realization exceeded budget in 2024."
+  },
+  "card_distribution": {
+    "id": "Distribusi Peserta",
+    "en": "Participation Distribution"
+  },
+  "empty_distribution": {
+    "id": "Visualisasi distribusi peserta",
+    "en": "Distribusi Peserta visualization"
+  },
+  "pill_distribution0": {
+    "id": "Unit kerja",
+    "en": "Business units"
+  },
+  "pill_distribution1": {
+    "id": "Jabatan",
+    "en": "Job levels"
+  },
+  "copy_distribution": {
+    "id": "Pemasaran, Operasional, dan Keuangan menempati tiga unit teratas. Pada kategori jabatan, <strong>Manager, Senior Staff, dan Senior Manager</strong> berada di tiga posisi teratas. Distribusi ini dapat menjadi titik awal penelaahan akses pembelajaran antarsegmen.",
+    "en": "Marketing, Operations, and Finance are the top three units. <strong>Manager, Senior Staff, and Senior Manager</strong> are the top three job levels. This distribution provides a starting point for examining learning access across segments."
+  },
+  "card_format": {
+    "id": "In-House vs Public Training",
+    "en": "In-House vs. Public Training"
+  },
+  "empty_format": {
+    "id": "Visualisasi in-house vs public training",
+    "en": "In-House vs Public Training visualization"
+  },
+  "pill_format0": {
+    "id": "In-House: 227",
+    "en": "In-House: 227"
+  },
+  "pill_format1": {
+    "id": "Public: 215",
+    "en": "Public: 215"
+  },
+  "copy_format": {
+    "id": "Grafik jenis pelatihan menampilkan <strong>227</strong> untuk In-House dan <strong>215</strong> untuk Public. Keduanya menunjukkan komposisi yang berdekatan. Efisiensi biaya dan kesesuaian kurikulum perlu dinilai dengan data pendukung.",
+    "en": "The training-type chart shows <strong>227</strong> for In-House and <strong>215</strong> for Public, indicating a relatively close split. Cost efficiency and curriculum relevance require supporting data."
+  },
+  "card_trends": {
+    "id": "Tren Pelatihan 2020–2025",
+    "en": "Training Trends 2020–2025"
+  },
+  "empty_trends": {
+    "id": "Visualisasi tren pelatihan 2020–2025",
+    "en": "Tren Pelatihan 2020–2025 visualization"
+  },
+  "pill_trends0": {
+    "id": "Puncak jam: 2024",
+    "en": "Peak hours: 2024"
+  },
+  "pill_trends1": {
+    "id": "Koreksi: 2025",
+    "en": "Decline: 2025"
+  },
+  "copy_trends": {
+    "id": "Total jam pelatihan mencapai <strong>70.468 jam</strong> pada 2024 dan turun menjadi <strong>58.078 jam</strong> pada 2025. Jumlah program relatif stabil; perubahan partisipasi perlu ditelaah bersama ukuran kelas dan cakupan program.",
+    "en": "Total training hours reached <strong>70,468</strong> in 2024 and fell to <strong>58,078</strong> in 2025. Program volume remained broadly stable; participation changes should be reviewed alongside class size and program coverage."
+  },
+  "card_individual": {
+    "id": "Investasi Pembelajaran per Individu",
+    "en": "Learning Investment per Individual"
+  },
+  "empty_individual": {
+    "id": "Visualisasi investasi pembelajaran per individu",
+    "en": "Investasi Pembelajaran per Individu visualization"
+  },
+  "pill_individual0": {
+    "id": "16,78 jam / karyawan",
+    "en": "16.78 hours / employee"
+  },
+  "pill_individual1": {
+    "id": "Rp8,4 juta / karyawan",
+    "en": "IDR8.4 million / employee"
+  },
+  "copy_individual": {
+    "id": "Presentasi mencatat rata-rata <strong>16,78 jam</strong> dan biaya sekitar <strong>Rp8,4 juta per karyawan</strong> pada 2025. Indikator ini menggambarkan intensitas dan investasi; kualitas pembelajaran perlu dinilai melalui evaluasi hasil belajar dan penerapan di tempat kerja.",
+    "en": "The presentation reports an average of <strong>16.78 hours</strong> and approximately <strong>IDR8.4 million per employee</strong> in 2025. These indicators describe intensity and investment; learning quality requires evaluation of learning outcomes and workplace application."
+  },
+  "dataNote": {
+    "id": "Catatan sumber: persentase anggaran mengikuti presentasi dan nilai rupiah ditampilkan dalam pembulatan. Angka pada grafik jenis pelatihan memiliki cakupan agregasi yang belum dijelaskan pada materi, sehingga tidak dijumlahkan dengan KPI peserta.",
+    "en": "Source note: budget percentages follow the presentation and rupiah amounts are rounded. The training-type chart’s aggregation scope is not explained in the material, so those figures are not combined with the participant KPI."
+  },
+  "recK": {
+    "id": "03 / INSIGHT & REKOMENDASI",
+    "en": "03 / INSIGHTS & RECOMMENDATIONS"
+  },
+  "recTitle": {
+    "id": "Temuan yang mendorong tindakan.",
+    "en": "Findings that inform action."
+  },
+  "recSub": {
+    "id": "Arah tindak lanjut untuk memperdalam analisis dan mendukung prioritas pengembangan.",
+    "en": "Next steps to deepen the analysis and support development priorities."
+  },
+  "rt0": {
+    "id": "Dinamika Partisipasi",
+    "en": "Participation Dynamics"
+  },
+  "rp0": {
+    "id": "Volume program relatif stabil, sementara peserta dan jam pelatihan menurun.",
+    "en": "Program volume is broadly stable, while participation and training hours declined."
+  },
+  "rr0": {
+    "id": "Telaah ukuran kelas, kriteria peserta, dan perubahan kebutuhan program.",
+    "en": "Review class sizes, participant criteria, and changing program needs."
+  },
+  "rt1": {
+    "id": "Fokus Pengembangan",
+    "en": "Development Focus"
+  },
+  "rp1": {
+    "id": "Distribusi partisipasi memperlihatkan konsentrasi pada unit inti dan beberapa level jabatan.",
+    "en": "Participation is concentrated in core units and selected job levels."
+  },
+  "rr1": {
+    "id": "Bandingkan distribusi peserta dengan kebutuhan kompetensi tiap segmen.",
+    "en": "Compare participation with the competency needs of each segment."
+  },
+  "rt2": {
+    "id": "Investasi per Individu",
+    "en": "Individual Investment"
+  },
+  "rp2": {
+    "id": "Rata-rata jam dan biaya membantu membaca intensitas investasi pembelajaran.",
+    "en": "Average hours and cost help describe the intensity of learning investment."
+  },
+  "rr2": {
+    "id": "Lengkapi dengan evaluasi hasil belajar serta penerapan di tempat kerja.",
+    "en": "Add evaluation of learning outcomes and workplace application."
+  },
+  "rt3": {
+    "id": "Kompetensi Digital",
+    "en": "Digital Competencies"
+  },
+  "rp3": {
+    "id": "Materi mencatat 30 peserta pada pengembangan kompetensi digital.",
+    "en": "The material reports 30 participants in digital competency development."
+  },
+  "rr3": {
+    "id": "Petakan kebutuhan digital dan prioritas program berdasarkan kesenjangan kompetensi.",
+    "en": "Map digital needs and prioritize programs based on competency gaps."
+  },
+  "ctaTitle": {
+    "id": "Jelajahi detail analisis.",
+    "en": "Explore the analysis in detail."
+  },
+  "ctaSub": {
+    "id": "Baca visualisasi dan konteks di balik setiap indikator.",
+    "en": "Explore the visualizations and the context behind each indicator."
+  },
+  "ctaButton": {
+    "id": "Lihat Live Dashboard ↗",
+    "en": "View Live Dashboard ↗"
+  },
+  "back": {
+    "id": "← Kembali ke portofolio",
+    "en": "← Back to portfolio"
+  },
+  "liveButton": {
+    "id": "Lihat Live Dashboard ↗",
+    "en": "View Live Dashboard ↗"
+  },
+  "metaTitle": {
+    "id": "Transformasi Digital & Dinamika Pelatihan | Euanggay Leona Enji",
+    "en": "Digital Transformation & Training Dynamics | Euanggay Leona Enji"
+  },
+  "metaDescription": {
+    "id": "Studi kasus analisis pelatihan PT. X 2025 oleh Euanggay Leona Enji.",
+    "en": "A case study of PT. X training performance in 2025 by Euanggay Leona Enji."
+  },
+  "previewCaption": {
+    "id": "PREVIEW DASHBOARD",
+    "en": "DASHBOARD PREVIEW"
+  },
+  "previewTitle": {
+    "id": "Dashboard Pelatihan 2025",
+    "en": "Training Dashboard 2025"
+  },
+  "previewSub": {
+    "id": "KPI · Partisipasi · Investasi",
+    "en": "KPIs · Participation · Investment"
+  },
+  "previewAction": {
+    "id": "Lihat Live Dashboard ↗",
+    "en": "View Live Dashboard ↗"
+  },
+  "liveTitle": {
+    "id": "Jelajahi dashboard interaktif.",
+    "en": "Explore the interactive dashboard."
+  },
+  "liveSub": {
+    "id": "Telusuri indikator dan visualisasi pelatihan dalam satu tampilan.",
+    "en": "Explore training indicators and visualizations in one view."
+  },
+  "openLive": {
+    "id": "Buka Dashboard ↗",
+    "en": "Open Dashboard ↗"
+  },
+  "liveEmptyTitle": {
+    "id": "Dashboard Pelatihan PT. X",
+    "en": "PT. X Training Dashboard"
+  },
+  "liveEmptySub": {
+    "id": "Ikhtisar kinerja pelatihan, partisipasi, dan investasi pembelajaran.",
+    "en": "An overview of training performance, participation, and learning investment."
+  },
+  "navdashboard": {
+    "id": "Live Dashboard",
+    "en": "Live Dashboard"
+  },
+};
+let currentLanguage = document.documentElement.lang === 'en' ? 'en' : 'id';
+const tr = key => I18N[key]?.[currentLanguage] || key;
+function setLanguage(lang) {
+  currentLanguage = ['id', 'en'].includes(lang) ? lang : 'id';
+  document.documentElement.lang = currentLanguage;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    if (I18N[el.dataset.i18n]) el.innerHTML = tr(el.dataset.i18n);
+  });
+  document.querySelectorAll('[data-lang]').forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang === currentLanguage)));
+  document.title = tr('metaTitle');
+  document.querySelector('meta[name="description"]').content = tr('metaDescription');
+  document.querySelector('.section-nav').setAttribute('aria-label', currentLanguage === 'id' ? 'Bagian proyek' : 'Project sections');
+  document.querySelectorAll('[data-image]').forEach(img => img.alt = tr('card_' + img.dataset.image));
+  const back = document.querySelector('.back-icon');
+  const backLabel = currentLanguage === 'id' ? 'Kembali ke semua proyek' : 'Back to all projects';
+  back.setAttribute('aria-label', backLabel); back.title = backLabel;
+  try { localStorage.setItem('enji-portfolio-language', currentLanguage); } catch (e) {}
+}
+function safeURL(value) {
+  if (!value) return false;
+  try { const u = new URL(value); return ['https:', 'http:'].includes(u.protocol); } catch (e) { return false; }
+}
+function initializeDashboard() {
+  const liveUrl = safeURL(PROJECT_CONFIG.dashboardUrl) ? PROJECT_CONFIG.dashboardUrl : '';
+  document.querySelectorAll('.dashboard-action').forEach(link => {
+    if (liveUrl) {
+      link.href = liveUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    } else {
+      // Tautan belum diisi: beri pesan yang jelas, jangan pindah ke section lain.
+      link.href = '#';
+      link.removeAttribute('target');
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        alert(currentLanguage === 'en'
+          ? 'Add your Looker Studio URL to PROJECT_CONFIG.dashboardUrl first.'
+          : 'Masukkan link Looker Studio Anda pada PROJECT_CONFIG.dashboardUrl terlebih dahulu.');
+      });
+    }
+  });
+}
+function initializeImages() {
+  // Kelima visualisasi analisis: src dapat diubah langsung di HTML.
+  document.querySelectorAll('[data-image]').forEach(img => {
+    const container = img.closest('.visual');
+    const empty = container.querySelector('.empty');
+    const show = () => {
+      img.hidden = false; empty.hidden = true; container.classList.add('has-image');
+      img.tabIndex = 0; img.setAttribute('role', 'button');
+    };
+    const hide = () => {
+      img.hidden = true; empty.hidden = false; container.classList.remove('has-image');
+      img.removeAttribute('tabindex'); img.removeAttribute('role');
+    };
+    img.addEventListener('load', show); img.addEventListener('error', hide);
+    if (img.complete) { if (img.naturalWidth > 0) show(); else hide(); }
+  });
+
+  // Bila file hero belum diunggah, warna navy tetap terlihat rapi.
+  const heroImage = document.getElementById('hero-background-image');
+  heroImage.addEventListener('error', () => { heroImage.hidden = true; });
+  heroImage.addEventListener('load', () => { heroImage.hidden = false; });
+  if (heroImage.complete && heroImage.naturalWidth === 0) heroImage.hidden = true;
+}
+const imageDialog = document.getElementById('image-dialog');
+function expandImage(img) {
+  if (img.hidden || !img.src) return;
+  const big = document.getElementById('expanded-image'); big.src = img.src; big.alt = img.alt;
+  if (typeof imageDialog.showModal === 'function') imageDialog.showModal();
+}
+document.querySelectorAll('[data-image]').forEach(img => {
+  img.addEventListener('click', () => expandImage(img));
+  img.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); expandImage(img); } });
+});
+imageDialog.querySelector('.close').addEventListener('click', () => imageDialog.close());
+imageDialog.addEventListener('click', e => { if (e.target === imageDialog) imageDialog.close(); });
+document.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.lang)));
+if (PROJECT_CONFIG.portfolioHome) {
+  const home = PROJECT_CONFIG.portfolioHome;
+  document.querySelector('.brand').href = home;
+  document.querySelector('.back-icon').href = home + '#work';
+  document.querySelector('.nav-right > a:not(.back-icon)').href = home + '#contact';
+  document.querySelector('.footer-row > a').href = home + '#work';
+}
+document.getElementById('year').textContent = new Date().getFullYear();
+try { const saved = localStorage.getItem('enji-portfolio-language'); if (['id', 'en'].includes(saved)) currentLanguage = saved; } catch (e) {}
+setLanguage(currentLanguage);
+initializeDashboard(); initializeImages();
+if (typeof IntersectionObserver !== 'undefined') {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) document.querySelectorAll('.section-nav a').forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, { rootMargin: '-140px 0px -50% 0px', threshold: 0 });
+  document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
+}
+
+</script>
+  </body>
+</html>
