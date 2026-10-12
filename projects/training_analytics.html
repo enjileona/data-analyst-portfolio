@@ -203,6 +203,76 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
   .back-icon{width:34px;height:34px}
 }
 
+
+/* ==============================================================
+   HERO DESAIN TERBARU — MENYESUAIKAN REFERENSI
+   - Header: ID/EN -> All Projects -> Contact
+   - Tombol Dashboard pertama di kiri, di bawah tool badges
+   - Screenshot dashboard full-width dengan gradasi navy
+   - Tanpa kartu preview di samping hero
+   ============================================================= */
+.header .container,
+.hero .container { width:min(1370px,calc(100% - 80px)); }
+.nav { min-height:84px; }
+.nav-right { gap:26px; }
+.nav-right > a { color:#182e4a; font-size:11px; font-weight:750; letter-spacing:.085em; text-transform:uppercase; white-space:nowrap; }
+.back-link { display:inline-flex; align-items:center; gap:7px; }
+.back-link:hover, .nav-contact:hover { color:var(--blue); }
+.lang { border-radius:999px; padding:4px; gap:4px; background:#eef3f8; border:1px solid #e1e9f2; }
+.lang button { min-width:39px; min-height:34px; border-radius:999px; font-size:11px; padding:7px 10px; font-weight:750; }
+.lang button[aria-pressed=true] { background:#102e56; color:#fff; box-shadow:0 2px 7px #071b3430; }
+.hero { background:#0b284d; }
+.hero-background-image { object-position:center 22%; filter:saturate(1.05); }
+.hero::before {
+  background:linear-gradient(90deg,
+    rgba(7,25,51,.99) 0%,
+    rgba(8,31,61,.97) 25%,
+    rgba(11,38,71,.88) 37%,
+    rgba(12,47,83,.63) 52%,
+    rgba(15,59,100,.29) 74%,
+    rgba(15,68,114,.08) 100%);
+}
+.hero-inner { min-height:685px; padding:90px 0 84px; grid-template-columns:minmax(0,730px); align-items:center; }
+.hero-copy { max-width:730px; }
+.hero .kicker { font-size:11px; letter-spacing:.17em; font-weight:800; }
+.hero h1 { max-width:720px; margin:20px 0 26px; font-size:clamp(44px,4.8vw,75px); font-weight:800; line-height:1.07; letter-spacing:-.052em; }
+.hero p.lead { max-width:595px; font-size:18px; line-height:1.8; }
+.tool-badges { margin-top:28px; gap:9px; }
+.tool-badge { font-size:11px; padding:7px 13px; border:1px solid #ffffff42; background:#ffffff0c; }
+.hero .actions { gap:12px; margin-top:29px; }
+.hero .actions .btn { min-height:52px; padding:13px 24px; border-radius:9px; font-size:13px; font-weight:750; box-shadow:0 8px 21px #061a3225; }
+.hero .actions .btn.primary { background:#146ef5; border-color:#146ef5; }
+.hero .actions .btn.primary:hover { background:#075fdd; }
+.hero .actions .btn.ghost { background:#102e5138; border-color:#ffffff70; color:#fff; }
+.byline { margin-top:31px; }
+@media(max-width:1000px) {
+  .header .container,.hero .container { width:calc(100% - 48px); }
+  .hero-inner { min-height:595px; padding:75px 0; grid-template-columns:minmax(0,710px); }
+  .hero h1 { font-size:clamp(43px,5.8vw,66px); }
+  .hero::before { background:linear-gradient(90deg,rgba(7,25,51,.98) 0%,rgba(8,31,61,.95) 36%,rgba(12,47,83,.66) 69%,rgba(15,68,114,.28) 100%); }
+}
+@media(max-width:680px) {
+  .header .container,.hero .container { width:calc(100% - 36px); }
+  .nav { min-height:72px; gap:9px; }
+  .nav-right { gap:10px; }
+  .nav-right > a { font-size:10px; letter-spacing:.025em; }
+  .lang { gap:2px; padding:3px; }
+  .lang button { min-width:30px; min-height:30px; padding:5px 7px; font-size:10px; }
+  .hero-inner { display:block; min-height:590px; padding:68px 0 60px; }
+  .hero h1 { font-size:clamp(35px,8.7vw,51px); }
+  .hero p.lead { font-size:15px; }
+  .hero::before { background:linear-gradient(90deg,rgba(7,25,51,.96) 0%,rgba(8,31,61,.91) 55%,rgba(12,47,83,.73) 100%); }
+  .hero .actions .btn { min-height:46px; padding:11px 15px; font-size:11px; }
+  .byline { margin-top:27px; }
+}
+@media(max-width:420px) {
+  .brand { font-size:8px; letter-spacing:.07em; }
+  .nav-right { gap:7px; }
+  .nav-right > a { font-size:9px; }
+  .back-link { gap:3px; }
+  .lang button { min-width:27px; padding:4px 5px; }
+}
+
 </style>
   </head>
   <body>
@@ -210,18 +280,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
       <div class="container nav">
         <a class="brand" href="../index.html" aria-label="Euanggay Leona Enji">EUANGGAY<br>ENJI</a>
         <div class="nav-right">
-          <a href="../index.html#work" class="back-icon" aria-label="Kembali ke semua proyek" title="Kembali ke semua proyek">
-            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M19 12H5m6-6-6 6 6 6"></path>
-            </svg>
-          </a>
-          <a href="../index.html#contact">
-            <span data-i18n="contact">Kontak</span>
-          </a>
+          <!-- PILIHAN BAHASA: di kiri tombol kembali, sesuai referensi -->
           <div class="lang" role="group" aria-label="Bahasa / Language">
             <button type="button" data-lang="id" aria-pressed="true">ID</button>
             <button type="button" data-lang="en" aria-pressed="false">EN</button>
           </div>
+          <a href="../index.html#work" class="back-link" aria-label="Kembali ke semua proyek" title="Kembali ke semua proyek">
+            <span aria-hidden="true">←</span>
+            <span data-i18n="all">Semua Proyek</span>
+          </a>
+          <a href="../index.html#contact" class="nav-contact"><span data-i18n="contact">Kontak</span></a>
         </div>
       </div>
     </header>
@@ -252,9 +320,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{o
               <span class="tool-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M8 8h8v9H8zM8 11h8M12 8v9"></path></svg>Google Sheets</span>
               <span class="tool-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M8 22h8M12 18v4M7 14v-3M12 14V8M17 14v-5"></path></svg>Looker Studio</span>
             </div>
+            <!-- TOMBOL UTAMA HERO: langsung membuka Looker Studio di tab baru -->
             <div class="actions">
-              <a class="btn primary" href="#analysis"><span data-i18n="seeAnalysis">Lihat Analisis ↓</span></a>
-              <a class="btn ghost dashboard-action" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="summary">Lihat Dashboard ↗</span></a>
+              <a class="btn primary dashboard-action" href="#" target="_blank" rel="noopener noreferrer"><span data-i18n="summary">Lihat Dashboard ↗</span></a>
+              <a class="btn ghost" href="#analysis"><span data-i18n="seeAnalysis">Lihat Analisis ↓</span></a>
             </div>
             <p class="byline">Euanggay Leona Enji · Data Analyst</p>
           </div>
@@ -704,8 +773,8 @@ const I18N = {
     "en": "View Analysis ↓"
   },
   "summary": {
-    "id": "Lihat Dashboard",
-    "en": "View Dashboard"
+    "id": "Lihat Dashboard ↗",
+    "en": "Explore Dashboard ↗"
   },
   "navkpi": {
     "id": "KPI Utama",
@@ -1045,7 +1114,7 @@ function setLanguage(lang) {
   document.querySelector('meta[name="description"]').content = tr('metaDescription');
   document.querySelector('.section-nav').setAttribute('aria-label', currentLanguage === 'id' ? 'Bagian proyek' : 'Project sections');
   document.querySelectorAll('[data-image]').forEach(img => img.alt = tr('card_' + img.dataset.image));
-  const back = document.querySelector('.back-icon');
+  const back = document.querySelector('.back-link');
   const backLabel = currentLanguage === 'id' ? 'Kembali ke semua proyek' : 'Back to all projects';
   back.setAttribute('aria-label', backLabel); back.title = backLabel;
   try { localStorage.setItem('enji-portfolio-language', currentLanguage); } catch (e) {}
@@ -1113,8 +1182,8 @@ document.querySelectorAll('[data-lang]').forEach(btn => btn.addEventListener('cl
 if (PROJECT_CONFIG.portfolioHome) {
   const home = PROJECT_CONFIG.portfolioHome;
   document.querySelector('.brand').href = home;
-  document.querySelector('.back-icon').href = home + '#work';
-  document.querySelector('.nav-right > a:not(.back-icon)').href = home + '#contact';
+  document.querySelector('.back-link').href = home + '#work';
+  document.querySelector('.nav-contact').href = home + '#contact';
   document.querySelector('.footer-row > a').href = home + '#work';
 }
 document.getElementById('year').textContent = new Date().getFullYear();
